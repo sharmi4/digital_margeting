@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "913532453798",
+    "project_id": "digitalmarketing-e61d0",
+    "storage_bucket": "digitalmarketing-e61d0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913532453798:android:1356b4124572fe0d2a0567",
+        "android_client_info": {
+          "package_name": "com.example.digital_marketing_stratergy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNTW3gWDDYGXy3EXQNPwY9Vqksog57Fyc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
