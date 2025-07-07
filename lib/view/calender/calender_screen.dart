@@ -29,6 +29,7 @@ class _CalenderScreenState extends State<CalenderScreen> {
   }
 
   List seogetdatetask = [];
+    List semgetdatetask = [];
 
 
 
@@ -324,6 +325,7 @@ class _CalenderScreenState extends State<CalenderScreen> {
                           print(_selectedDay);
 
                           getbyDate();
+                          semgetbyDate();
                         });
                       },
                       calendarStyle: const CalendarStyle(
@@ -534,7 +536,81 @@ class _CalenderScreenState extends State<CalenderScreen> {
                             ],
                           ),
                         );
-                      }):Text("No Data")
+                      }):Text(""),
+                      //sem
+                       semData.isNotEmpty? ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: semData.length,
+                        itemBuilder: (context,index){
+                        return Padding(
+                          padding: const EdgeInsets.only(left: 10,right: 10,top: 10),
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  CircleAvatar(
+                                    radius: 12,
+                                    backgroundColor:AppColors.blue ,
+                                    child: Center(
+                                      child: Icon(Icons.check,
+                                      size: 18,
+                                      color: AppColors.textWhite,),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 5),
+                                    child: Row(
+                                      children: [
+                                        Image.asset(
+                                        "assets/icons/sem.png",
+                                          width: 30,
+                                          height: 30,
+                                          fit: BoxFit.fitHeight,
+                                        ),
+                                         SizedBox(width: 5),
+                                        Column(
+                                          children: [
+                                            Container(
+                                              width: 180,
+                                              child: Text(semData[index]["taskname"], style:  TextStyle(fontSize: 14))),
+                                          ],
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 10),
+                                          child: Container(
+                                            padding: const EdgeInsets.symmetric(
+                                              horizontal: 6,
+                                              vertical: 2,
+                                            ),
+                                            decoration: BoxDecoration(
+                                              color: Colors.yellow[700],
+                                              borderRadius: BorderRadius.circular(8),
+                                            ),
+                                            child: const Text(
+                                              "20XP",
+                                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  CircleAvatar(
+                                    radius: 15,
+                                    backgroundColor: const Color(0xFFE6F1FF),
+                                    child: Icon(
+                                      Icons.play_arrow_sharp,
+                                      size: 20,
+                                      color: AppColors.blue,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        );
+                      }):Text("")
                       // buildTodayTasksSection(),
                     ],
                   ),
@@ -659,7 +735,9 @@ class _CalenderScreenState extends State<CalenderScreen> {
       ),
     );
   }
+  //seo
   List<Map<String,dynamic>> sData = [];
+
  void getbyDate() async {
   final rawData = await DatabaseHelper().getSeoTaskByDate(_selectedDay.toString().split(" ")[0]);
 
@@ -668,6 +746,20 @@ class _CalenderScreenState extends State<CalenderScreen> {
   sData = rawData.where((element) => seen.add(element['taskname'])).toList();
 
   print("Filtered SDATA LENGTH --> ${sData.length}");
+  setState(() {}); // Update UI after data change
+}
+
+//sem
+List<Map<String,dynamic>> semData = [];
+
+void semgetbyDate() async {
+  final rawData = await DatabaseHelper().getSEMTaskByDate(_selectedDay.toString().split(" ")[0]);
+
+  // Remove duplicates based on 'taskname'
+  final seen = <String>{};
+  semData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+  print("Filtered SDATA LENGTH --> ${semData.length}");
   setState(() {}); // Update UI after data change
 }
 

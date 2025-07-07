@@ -5,6 +5,8 @@ import 'package:digital_marketing_stratergy/controller/statergy_controller.dart'
 import 'package:digital_marketing_stratergy/helper/loadingHelper.dart';
 import 'package:digital_marketing_stratergy/model/seo_statergy_model.dart';
 import 'package:digital_marketing_stratergy/sqlite_database/sqlite_database_helper.dart';
+import 'package:digital_marketing_stratergy/view/stratergy_task/loading_helpers_coustom.dart';
+import 'package:digital_marketing_stratergy/view/stratergy_task/sem_task/sem_stratergy_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,22 +24,71 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
 
   final List<Map<String, dynamic>> taskData = [
     {
-      "title": "SEO Strategy",
-      "icon": "assets/images/seo.png",
+      "title": "Search Engine Optimization (SEO)",
+      "icon": "assets/icons/seo.png",
       "completed": 0,
       "total": 0,
       "xp": 500,
       "color": AppColors.blue,
     },
     {
-      "title": "Social Media",
+      "title": "Search Engine Marketing (SEM)",
+      "icon": "assets/icons/sem.png",
+      "completed": 0,
+      "total": 0,
+      "xp": 500,
+      "color": AppColors.darkyellow,
+    },
+    {
+      "title": "Social Media Marketing (SMM)",
       "icon": "assets/images/social.png",
       "completed": 4,
       "total": 10,
       "xp": 800,
+      "color": AppColors.blue,
+    },
+     {
+      "title": "Answer Engine Optimization AEO ",
+      "icon": "assets/icons/aeo.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
       "color": AppColors.darkyellow,
     },
     {
+      "title": "Generative Engine Optimization (GEO)",
+      "icon": "assets/icons/geo.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.blue,
+    },
+    {
+      "title": "AI Integration Optimization (AIO)",
+      "icon": "assets/icons/aio.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.darkyellow,
+    },
+    {
+      "title": "Search Experience Optimization (SXO)",
+      "icon": "assets/icons/sxo.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.blue,
+    },
+   
+    {
+      "title": "Content Marketing",
+      "icon": "assets/images/content_creation.png",
+      "completed": 2,
+      "total": 10,
+      "xp": 500,
+      "color": AppColors.darkyellow,
+    },
+     {
       "title": "Email Marketing",
       "icon": "assets/images/email.png",
       "completed": 7,
@@ -46,21 +97,173 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
       "color": AppColors.blue,
     },
     {
-      "title": "Content Creation",
-      "icon": "assets/images/content_creation.png",
-      "completed": 2,
+      "title": "Influencer Marketing",
+      "icon": "assets/icons/im.png",
+      "completed": 7,
       "total": 10,
-      "xp": 500,
+      "xp": 300,
       "color": AppColors.darkyellow,
     },
     {
-      "title": "Google My Business",
-      "icon": "assets/images/gmbusinees.png",
-      "completed": 9,
+      "title": "Affiliate Marketing",
+      "icon": "assets/icons/am.png",
+      "completed": 7,
       "total": 10,
-      "xp": 950,
+      "xp": 300,
       "color": AppColors.blue,
     },
+    {
+      "title": "Video Marketing",
+      "icon": "assets/icons/vm.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.darkyellow,
+    },
+    {
+      "title": "Mobile Marketing",
+      "icon": "assets/icons/mm.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.blue,
+    },
+     {
+      "title": "Online Reputation Management (ORM)",
+      "icon": "assets/icons/orm.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.darkyellow,
+    },
+     {
+      "title": "Conversion Rate Optimization (CRO)",
+      "icon": "assets/icons/cro.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.blue,
+    },
+     {
+      "title": "Web Analytics and Tracking",
+      "icon": "assets/icons/wat.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.darkyellow,
+    },
+     {
+      "title": "Pay-Per-Click Advertising (PPC)",
+      "icon": "assets/icons/ppca.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.blue,
+    },
+     {
+      "title": "Programmatic Advertising",
+      "icon": "assets/icons/pa.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.darkyellow,
+    },
+     {
+      "title": "Remarketing / Retargeting",
+      "icon": "assets/icons/Retargeting.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.blue,
+    },
+    {
+      "title": "Local SEO",
+      "icon": "assets/icons/localseo.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color":AppColors.darkyellow,
+    },
+    {
+      "title": "Voice Search Optimization",
+      "icon": "assets/icons/vso.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.blue,
+    },
+    {
+      "title": "Marketing Automation",
+      "icon": "assets/icons/ma.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.darkyellow,
+    },
+    {
+      "title": "Chatbot Marketing",
+      "icon": "assets/icons/ca.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.blue,
+    },
+    {
+      "title": "Community Management",
+      "icon": "assets/icons/com.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.darkyellow,
+    },
+    {
+      "title": "Digital PR",
+      "icon": "assets/icons/dpr.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.blue,
+    },
+    {
+      "title": "Webinar and Virtual Event Marketing",
+      "icon": "assets/icons/wvem.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.darkyellow,
+    },
+    {
+      "title": "SMS & WhatsApp Marketing",
+      "icon": "assets/icons/swm.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.blue,
+    },
+    {
+      "title": "Landing Page Optimization",
+      "icon": "assets/icons/lpo.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.darkyellow,
+    },
+    {
+      "title": "Funnel Building and Optimization",
+      "icon": "assets/icons/fbo.png",
+      "completed": 7,
+      "total": 10,
+      "xp": 300,
+      "color": AppColors.blue,
+    },
+    // {
+    //   "title": "Google My Business",
+    //   "icon": "assets/images/gmbusinees.png",
+    //   "completed": 9,
+    //   "total": 10,
+    //   "xp": 950,
+    //   "color": AppColors.blue,
+    // },
   ];
 
   List<Map<String, dynamic>> seogettask = [];
@@ -71,6 +274,7 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
 
     statergydbinsert();
     gettaskdb();
+    getSEMtaskdb();
   }
 
   void statergydbinsert() async {
@@ -85,6 +289,7 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
       );
     }
   }
+  
 
   void gettaskdb() async {
     seogettask = await DatabaseHelper().getSeoTaskById(Helper.businessId);
@@ -93,6 +298,15 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
     taskData[0]["completed"] = completed;
     taskData[0]["total"] = total;
     print(">>>> SEO completed: $completed / $total");
+    setState(() {});
+  }
+   void getSEMtaskdb() async {
+    seogettask = await DatabaseHelper().getSeoTaskById(Helper.businessId);
+    int completed = seogettask.where((task) => task["iscompleted"] == "1").length;
+    int total = seogettask.length;
+    taskData[1]["completed"] = completed;
+    taskData[1]["total"] = total;
+    print(">>>> SEM completed: $completed / $total");
     setState(() {});
   }
 
@@ -214,6 +428,13 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
                               SeoStrategyScreen(businessId: Helper.businessId),
                         );
                       });
+                    }if (index == 1) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              SemStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
                     }
                   },
                   child: buildTaskCard(
@@ -223,7 +444,7 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
                     completed: task["completed"],
                     total: task["total"],
                     xp: task["xp"],
-                    color: task["color"],
+                    color: task["color"], index: index,
                   ),
                 );
               },
@@ -242,13 +463,14 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
     required int total,
     required int xp,
     required Color color,
+    required int index,
   }) {
     final double progress = total > 0 ? completed / total : 0;
     final progressColor =
         (color == AppColors.blue) ? Colors.yellow : Colors.grey;
 
     return Container(
-      height: 142,
+      height: 164,
       margin: const EdgeInsets.symmetric(vertical: 8),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -267,34 +489,20 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    InkWell(
-                      onTap: () async {
-                        print("Tapped SEO Strategy at: ${DateTime.now()}");
+                   InkWell(
+  onTap: () async {
+    
+  },
+  child: Image.asset(
+    iconPath,
+    height: 60,
+    fit: BoxFit.fitHeight,
+  ),
+),
 
-                        LoadingHelper.show(context); // show immediately
 
-                        try {
-                          await seostatergyController.submitStrategy();
-                        } catch (e) {
-                          print("Error submitting strategy: $e");
-                          LoadingHelper.hide();
-                        } finally {
-                          LoadingHelper.hide(); // ensure hide is called even if error happens
-                        }
 
-                        print("Navigating to SeoStrategyScreen at: ${DateTime.now()}");
 
-                        WidgetsBinding.instance.addPostFrameCallback((_) {
-                          Get.to(() => SeoStrategyScreen(businessId: Helper.businessId));
-                        });
-
-                      },
-                      child: Image.asset(
-                        iconPath,
-                        height: 60,
-                        fit: BoxFit.fitHeight,
-                      ),
-                    ),
                     const SizedBox(width: 8),
                     Expanded(
                       child: Column(
@@ -311,7 +519,7 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
                                   fontSize: 13,
                                   color: AppColors.textWhite,
                                 ),
-                                maxLines: 1,
+                                maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                               ),
                               // const SizedBox(height: 2),
@@ -388,6 +596,55 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
                   color: progressColor,
                 ),
               ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              InkWell(
+                onTap: ()async{
+                if(index==0){
+       print("Tapped SEO Strategy at: ${DateTime.now()}");
+
+    CoustomLoadingHelper.show();
+
+    try {
+      await seostatergyController.submitStrategy();
+    } catch (e) {
+      print("Error submitting strategy: $e");
+    } finally {
+      CoustomLoadingHelper.hide();
+    }
+
+    print("Navigating to SeoStrategyScreen at: ${DateTime.now()}");
+    Get.to(() => SeoStrategyScreen(businessId: Helper.businessId));
+    }
+    if(index==1){
+       print("Tapped SEm Strategy at: ${DateTime.now()}");
+
+    CoustomLoadingHelper.show();
+
+    try {
+      await seostatergyController.submitSEMStrategy();
+    } catch (e) {
+      print("Error submitting strategy: $e");
+    } finally {
+      CoustomLoadingHelper.hide();
+    }
+
+    print("Navigating to SeoStrategyScreen at: ${DateTime.now()}");
+    Get.to(() => SemStrategyScreen(businessId: Helper.businessId));
+    }
+  
+                },
+                child: Text("Generate Statregy",
+                style: primaryFont(
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.textWhite,
+                ),
+                
+                ),
+              )
             ],
           ),
 

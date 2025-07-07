@@ -1,6 +1,5 @@
 
 import 'package:digital_marketing_stratergy/model/responseModel.dart';
-import 'package:digital_marketing_stratergy/view/calender/publish_screen.dart';
 import 'package:digital_marketing_stratergy/view/stratergy_task/particular_stratergy_screen.dart';
 
 class Helper {
@@ -21,9 +20,13 @@ class Helper {
  static String instrusction = "";
  static String type = "";
  static  String businessId = "";
+ static String  duration = "";
 
-
-
+static String SEMinstrusction = "";
+static String Semselectedstartergytitle ="";
+static String semtaskId ="";
+static int semsnumber = 0;
+static String semtype = "";
 
 
 }

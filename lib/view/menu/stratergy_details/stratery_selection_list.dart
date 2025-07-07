@@ -3,7 +3,6 @@ import 'package:digital_marketing_stratergy/const/app_color.dart';
 import 'package:digital_marketing_stratergy/const/app_fonts.dart';
 import 'package:digital_marketing_stratergy/helper/loadingHelper.dart';
 import 'package:digital_marketing_stratergy/model/statergy_model.dart';
-import 'package:digital_marketing_stratergy/view/create_statergy/business_details_screen.dart';
 import 'package:digital_marketing_stratergy/view/stratergy_task/stratergy_task_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,6 +23,7 @@ class _StrategySelectionListScreenState extends State<StrategySelectionListScree
 
   String? selectedGoal;
   String? selectedBusinessCategory;
+  String? selectduration;
 
   final businessnameController = TextEditingController();
   final TextEditingController websiteUrlController = TextEditingController();
@@ -391,6 +391,27 @@ class _StrategySelectionListScreenState extends State<StrategySelectionListScree
                 onChanged: (value) => setState(() => selectedGoal = value),
               ),
             ),
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.only(left: 10,right: 10),
+              child: _dropdownField(
+                hint: "Select your duration",
+                image: "assets/icons/duration.png",
+                items: [
+                  '30 days',
+                  '60 days',
+                  '90 days'
+                ],
+                selectedValue: selectduration,
+                onChanged: (value) {
+      setState(() {
+        selectduration = value!;
+        Helper.duration = selectduration!;
+        print(">>>>>>>>>>>>>>>>>SELECTED DURATION>>>>>>>>${Helper.duration}");
+      });
+    },
+              ),
+            ),
 
 
 
@@ -672,9 +693,9 @@ class _StrategySelectionListScreenState extends State<StrategySelectionListScree
     List<Map<String,dynamic>> data = await DatabaseHelper().getbusinessdata();
 
     if(data.isNotEmpty && data.length == 1){
-      Helper.businessId = data[0]["id"];
+      Helper.businessId = data[0]["id"].toString();
     }else if(data.isNotEmpty && data.length > 1){
-      Helper.businessId = data[data.length -1]["id"];
+      Helper.businessId = data[data.length -1]["id"].toString();
     }
   }
 

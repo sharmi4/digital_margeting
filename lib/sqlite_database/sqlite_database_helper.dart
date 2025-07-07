@@ -73,6 +73,21 @@ class DatabaseHelper {
         
       )
     ''');
+    await db.execute('''
+      CREATE TABLE semtask (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        snumber INTEGER,
+        taskname TEXT,
+        insturctions TEXT,
+        iscompleted TEXT,
+        date TEXT,
+        category TEXT,
+        type TEXT,
+        businessid INTEGER
+        
+        
+      )
+    ''');
   }
 
   // CRUD Methods:
@@ -97,7 +112,7 @@ class DatabaseHelper {
     return await db.delete('businessdata', where: 'id = ?', whereArgs: [id]);
   }
 // statergy
-  Future<int> insertstatergydata(StrategyModel item) async {
+  Future<int> insertstatergydata(StrategyModel item) async { 
     final db = await database;
     return await db.insert('statergydata', item.toJson());
   }
@@ -137,6 +152,43 @@ Future<List<Map<String, dynamic>>> getSeoTaskById(String id) async {
   final db = await database;
   return await db.query(
     'seotask',
+    where: 'businessid = ?',
+    whereArgs: [id],
+    orderBy: 'date ASC', // always ascending
+  );
+}
+
+//SEM Task
+
+Future<int> insertSEMtaskdata(SeoTaskModel item) async {
+    final db = await database;
+    return await db.insert('semtask', item.toJson());
+  }
+
+
+ Future<List<Map<String, dynamic>>> getSEMdata() async {
+    final db = await database;
+    return await db.query('semtask');
+  }
+
+  Future<int> updateSEMtask(SeoTaskModel item) async {
+    final db = await database;
+    return await db.update('semtask', item.toJson(), where: 'id = ?', whereArgs: [item.id]);
+  }
+
+  Future<List<Map<String, dynamic>>> getSEMTaskByDate(String date) async {
+    final db = await database;
+    return await db.query(
+      'semtask',
+      where: 'date = ?',
+      whereArgs: [date],
+    );
+  }
+
+  Future<List<Map<String, dynamic>>> getSEMTaskById(String id) async {
+  final db = await database;
+  return await db.query(
+    'semtask',
     where: 'businessid = ?',
     whereArgs: [id],
     orderBy: 'date ASC', // always ascending

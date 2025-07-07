@@ -31,8 +31,8 @@ class _BottomBarState extends State<BottomBar> {
 
   final List<Widget> screens = [
     HomeScreen(),
-    // StratergyTaskScreen(),
-    StratergyListScreen(),
+    StratergyTaskScreen(),
+    // StratergyListScreen(),
     CalenderScreen(),
     InsightsScreen(),
     MenuScreen()

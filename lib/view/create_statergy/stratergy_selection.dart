@@ -3,7 +3,6 @@ import 'package:digital_marketing_stratergy/const/app_color.dart';
 import 'package:digital_marketing_stratergy/const/app_fonts.dart';
 import 'package:digital_marketing_stratergy/helper/loadingHelper.dart';
 import 'package:digital_marketing_stratergy/model/statergy_model.dart';
-import 'package:digital_marketing_stratergy/view/create_statergy/business_details_screen.dart';
 import 'package:digital_marketing_stratergy/view/stratergy_task/stratergy_task_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,6 +23,7 @@ class _StrategySelectionScreenState extends State<StrategySelectionScreen> {
 
   String? selectedGoal;
   String? selectedBusinessCategory;
+  String? selectduration;
 
   final businessnameController = TextEditingController();
     final TextEditingController websiteUrlController = TextEditingController();
@@ -391,6 +391,27 @@ class _StrategySelectionScreenState extends State<StrategySelectionScreen> {
                 onChanged: (value) => setState(() => selectedGoal = value),
               ),
             ),
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.only(left: 10,right: 10),
+              child: _dropdownField(
+                hint: "Stratergy Duration",
+                image: "assets/icons/duration.png",
+                items: [
+                  '30 days',
+                  '60 days',
+                  '90 days'
+                ],
+                selectedValue: selectduration,
+                onChanged: (value) {
+      setState(() {
+        selectduration = value!;
+        Helper.duration = selectduration!;
+        print(">>>>>>>>>>>>>>>>>SELECTED DURATION>>>>>>>>${Helper.duration}");
+      });
+    },
+              ),
+            ),
 
 
 
@@ -582,8 +603,10 @@ class _StrategySelectionScreenState extends State<StrategySelectionScreen> {
             Helper.businesscategoryselected = selectedBusinessCategory!;
             Helper.selectgoal = selectedGoal!;
             Helper.targetlocation = selectedLocation;
+            Helper.duration = selectduration!;
 
-           
+            print(">>>>>>>>>>>>>>>>>SELECTED DURATION>>>>>>>>${Helper.duration}");
+
             LoadingHelper.show(context);
 
 
@@ -601,47 +624,13 @@ class _StrategySelectionScreenState extends State<StrategySelectionScreen> {
             );
             await  DatabaseHelper().insertbusinessdata(model);
             getBusinessTable(); // Wait for the table to be fetched
-Future.delayed(Duration(milliseconds: 200), () {
-  Get.to(StratergyTaskScreen());
-});
+            Future.delayed(Duration(milliseconds: 200), () {
+              Get.to(StratergyTaskScreen());
+              });
 
           
                
-            // if (businessNameController.text.isEmpty ||
-            //     websiteUrlController.text.isEmpty ||
-            //     aboutBrandController.text.isEmpty ||
-            //     selectedBusinessCategory == null) {
-            //   Get.snackbar(
-            //     "Missing Fields",
-            //     "Please fill all required fields.",
-            //   );
-            //   return;
-            // }
-
-            // final model = StrategyInputModel(
-            //   businessName: businessNameController.text,
-            //   websiteUrl: websiteUrlController.text,
-            //   aboutBrand: aboutBrandController.text,
-            //   businessCategory: selectedBusinessCategory!,
-            //   audienceType: selectedAudience,
-            //   targetLocation: selectedLocation,
-            //   linkedinUrl: linkedinController.text,
-            //   facebookUrl: facebookController.text,
-            //   gmbUrl: gmbController.text,
-            //   instagramUrl: instagramController.text,
-            // );
-            //
-            // // Save locally
-            // await StrategyLocalStorage.saveBusinessInfo(model);
-            // setState(() {
-            //   loading = true;
-            // });
-
-            // Send to Gemini
-          //  final response = await StrategyApiService().sendToGemini();
-
-
-                  //  Get.to(StratergyListScreen());
+            
               
           },
           child: Container(
@@ -759,14 +748,11 @@ Future.delayed(Duration(milliseconds: 200), () {
           )
         ]
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 12),
+      
       child: DropdownButtonFormField<String>(
         value: selectedValue,
         decoration: InputDecoration(
-          prefixIcon: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Image.asset(image, height: 20, width: 20),
-          ),
+          prefixIcon: Image.asset(image, height: 30, width: 30),
           hintText: hint,
           hintStyle: primaryFont(
             fontWeight: FontWeight.w500,
