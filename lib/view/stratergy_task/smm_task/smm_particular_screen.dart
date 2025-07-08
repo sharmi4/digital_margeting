@@ -8,12 +8,12 @@ import 'package:digital_marketing_stratergy/view/stratergy_task/task_order_scree
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SEMParticulartaskProgressScreen extends StatefulWidget {
+class SMMParticulartaskProgressScreen extends StatefulWidget {
   String instructions;
   String type;
   String category;
 
-  SEMParticulartaskProgressScreen({
+  SMMParticulartaskProgressScreen({
     super.key,
     required this.instructions,
     required this.category,
@@ -21,12 +21,12 @@ class SEMParticulartaskProgressScreen extends StatefulWidget {
   });
 
   @override
-  State<SEMParticulartaskProgressScreen> createState() =>
-      _SEMParticulartaskProgressScreenState();
+  State<SMMParticulartaskProgressScreen> createState() =>
+      _SMMParticulartaskProgressScreenState();
 }
 
-class _SEMParticulartaskProgressScreenState
-    extends State<SEMParticulartaskProgressScreen> {
+class _SMMParticulartaskProgressScreenState
+    extends State<SMMParticulartaskProgressScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +46,7 @@ class _SEMParticulartaskProgressScreenState
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              Helper.Semselectedstartergytitle,
+              Helper.Smmselectedstartergytitle,
               style: primaryFont(
                 fontWeight: FontWeight.w500,
                 fontSize: 15,
@@ -118,7 +118,7 @@ class _SEMParticulartaskProgressScreenState
                           child: Column(
                             children: [
                               Text(
-                                Helper.selectedstartergytitle,
+                                Helper.Smmselectedstartergytitle,
                                 style: primaryFont(
                                   fontWeight: FontWeight.w700,
                                   fontSize: 16,
@@ -295,14 +295,14 @@ class _SEMParticulartaskProgressScreenState
             ksizedbox20,
             InkWell(
               onTap: () {
-                print("TASK ID ==== > ${ Helper.semtaskId}");
-                DatabaseHelper().updateSEMtask(
+                print("TASK ID ==== > ${ Helper.smmtaskId}");
+                DatabaseHelper().updateSMMtask(
                   SeoTaskModel(
-                    id: Helper.semtaskId,
-                    taskname: Helper.Semselectedstartergytitle,
+                    id: Helper.smmtaskId,
+                    taskname: Helper.Smmselectedstartergytitle,
                     insturctions: widget.instructions,
                     iscompleted: 1,
-                    snumber: Helper.semsnumber,
+                    snumber: Helper.smmsnumber,
                     date: DateTime.now().toString().split(" ")[0],
                     type: widget.type,
                     businessId: Helper.businessId,

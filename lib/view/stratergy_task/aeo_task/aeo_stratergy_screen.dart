@@ -3,24 +3,24 @@ import 'package:digital_marketing_stratergy/const/app_color.dart';
 import 'package:digital_marketing_stratergy/const/app_fonts.dart';
 import 'package:digital_marketing_stratergy/model/seo_database_taskmodel.dart';
 import 'package:digital_marketing_stratergy/sqlite_database/sqlite_database_helper.dart';
-import 'package:digital_marketing_stratergy/view/stratergy_task/sem_task/sem_particulartask_screen.dart';
+import 'package:digital_marketing_stratergy/view/stratergy_task/aeo_task/add_aeotask_screen.dart';
+import 'package:digital_marketing_stratergy/view/stratergy_task/aeo_task/aeo_particulartask_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'add_semtask_screen.dart';
 
 
-class SemStrategyScreen extends StatefulWidget {
+class AeoStrategyScreen extends StatefulWidget {
 
    final String businessId; // <-- argument
 
-  SemStrategyScreen({required this.businessId}); // <-- constructor
+  AeoStrategyScreen({required this.businessId}); // <-- constructor
   @override
-  State<SemStrategyScreen> createState() => _SemStrategyScreenState();
+  State<AeoStrategyScreen> createState() => _AeoStrategyScreenState();
 }
 
-class _SemStrategyScreenState extends State<SemStrategyScreen> {
+class _AeoStrategyScreenState extends State<AeoStrategyScreen> {
  
   @override
   void initState() {
@@ -29,11 +29,11 @@ class _SemStrategyScreenState extends State<SemStrategyScreen> {
     super.initState();
   }
 
-  List semgettask = [];
+  List aeogettask = [];
 
   gettaskdb() async {
-    semgettask = await DatabaseHelper().getSEMTaskById(Helper.businessId);
-    print(">>>>>>>>>>>>getseoTask>>>>>>>${semgettask.length}");
+    aeogettask = await DatabaseHelper().getAEOTaskById(Helper.businessId);
+    print(">>>>>>>>>>>>getaeoTask>>>>>>>${aeogettask.length}");
     print(">>>>>>>>>>>>>>>>>>businessId${Helper.businessId}");
     setState(()  {
 
@@ -58,7 +58,7 @@ class _SemStrategyScreenState extends State<SemStrategyScreen> {
         title: Row(
           children: [
             Text(
-              "SEM Strategy",
+              "AEO Strategy",
               style: primaryFont(
                 fontWeight: FontWeight.w500,
                 fontSize: 15,
@@ -113,7 +113,7 @@ class _SemStrategyScreenState extends State<SemStrategyScreen> {
               ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
-                itemCount: semgettask.length,
+                itemCount: aeogettask.length,
                 itemBuilder: (context, index) {
                   return _buildTaskTile(index);
                 },
@@ -127,7 +127,7 @@ class _SemStrategyScreenState extends State<SemStrategyScreen> {
          mini: true, // reduces size
         elevation: 1,
         onPressed: (){
-          Get.to(AddSemTaskScreen());
+          Get.to(AddAEOTaskScreen());
         },
         child: Icon(Icons.add,color: AppColors.textWhite,),
         tooltip: 'Add',
@@ -136,7 +136,7 @@ class _SemStrategyScreenState extends State<SemStrategyScreen> {
   }
 
   Widget _buildProgressCard() {
-    int completed = semgettask.where((task) => task["iscompleted"] == "1").length;
+    int completed = aeogettask.where((task) => task["iscompleted"] == "1").length;
 
 
     return Container(
@@ -182,7 +182,7 @@ class _SemStrategyScreenState extends State<SemStrategyScreen> {
                       ), // highlight completed count
                     ),
                     TextSpan(
-  text: " / ${semgettask.length} Tasks",
+  text: " / ${aeogettask.length} Tasks",
   style: primaryFont(
     fontWeight: FontWeight.w200,
     fontSize: 16,
@@ -240,7 +240,7 @@ class _SemStrategyScreenState extends State<SemStrategyScreen> {
   }
   
   Widget _buildTaskTile(int index) {
-    final task = semgettask[index];
+    final task = aeogettask[index];
 
     return ListTile(
       leading:  Text(
@@ -256,21 +256,21 @@ class _SemStrategyScreenState extends State<SemStrategyScreen> {
           Expanded(
             child: InkWell(
               onTap: (){
-                Helper.Semselectedstartergytitle = semgettask[index]["taskname"];
-                Helper.semtaskId = semgettask[index]["id"].toString();
-                      Helper.semsnumber = semgettask[index]["snumber"];
-                      Helper.SEMinstrusction = semgettask[index]["insturctions"];
-                      Helper.semtype = semgettask[index]["type"];
+                Helper.aeoselectedstartergytitle = aeogettask[index]["taskname"];
+                Helper.aeotaskId = aeogettask[index]["id"].toString();
+                      Helper.aeosnumber = aeogettask[index]["snumber"];
+                      Helper.AEOinstrusction = aeogettask[index]["insturctions"];
+                      Helper.aeotype = aeogettask[index]["type"];
 
                       Get.to(
-                        SEMParticulartaskProgressScreen(
-                          instructions: Helper.SEMinstrusction, 
-                          category: 'SEM', type: Helper.type,
+                        AEOParticulartaskProgressScreen(
+                          instructions: Helper.AEOinstrusction, 
+                          category: 'AEO', type: Helper.aeotype,
                         ),
                       );
               },
               child: Text(
-                semgettask[index]["taskname"],
+                aeogettask[index]["taskname"],
                 style: primaryFont(
                   fontWeight: FontWeight.w500,
                   fontSize: 15,
@@ -309,7 +309,7 @@ class _SemStrategyScreenState extends State<SemStrategyScreen> {
       children: [
         InkWell(
           onTap: ()async {
-              final task = SeoTaskModel.fromJson(semgettask[index]);
+              final task = SeoTaskModel.fromJson(aeogettask[index]);
     
     TextEditingController nameController = TextEditingController(text: task.taskname);
     
@@ -348,10 +348,10 @@ class _SemStrategyScreenState extends State<SemStrategyScreen> {
       taskname: nameController.text,
       snumber: task.snumber,
       insturctions: task.insturctions,
-      iscompleted: task.iscompleted, type: Helper.semtype, businessId: Helper.businessId,
+      iscompleted: task.iscompleted, type: Helper.aeotype, businessId: Helper.businessId,
     );
 
-    await DatabaseHelper().updateSEMtask(updatedTask);
+    await DatabaseHelper().updateAEOtask(updatedTask);
 
     await gettaskdb(); // ✅ refresh data from DB
     Navigator.pop(context);

@@ -5,31 +5,30 @@ import 'package:digital_marketing_stratergy/const/app_fonts.dart';
 import 'package:digital_marketing_stratergy/model/seo_database_taskmodel.dart';
 import 'package:digital_marketing_stratergy/sqlite_database/sqlite_database_helper.dart';
 import 'package:digital_marketing_stratergy/view/stratergy_task/particular_stratergy_screen.dart';
-import 'package:digital_marketing_stratergy/view/stratergy_task/sem_task/sem_stratergy_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 
-class AddSemTaskScreen extends StatefulWidget {
-  const AddSemTaskScreen({super.key});
+class AddSmmTaskScreen extends StatefulWidget {
+  const AddSmmTaskScreen({super.key});
 
   @override
-  State<AddSemTaskScreen> createState() => _AddSemTaskScreenState();
+  State<AddSmmTaskScreen> createState() => _AddSmmTaskScreenState();
 }
 
-class _AddSemTaskScreenState extends State<AddSemTaskScreen> {
+class _AddSmmTaskScreenState extends State<AddSmmTaskScreen> {
   var tasknameController = TextEditingController();
   var youtubeUrlController = TextEditingController();
   var instructionController = TextEditingController();
       bool loading = false;
       DateTime? selectedDate;
 
-    List semgettask = [];
+    List smmgettask = [];
 
   gettaskdb() async {
-    semgettask = await DatabaseHelper().getSEMdata();
-    print(">>>>>>>>>>>>getseoTask>>>>>>>${semgettask.length}");
+    smmgettask = await DatabaseHelper().getSMMdata();
+    print(">>>>>>>>>>>>getseoTask>>>>>>>${smmgettask.length}");
     setState(()  {
 
     });
@@ -253,13 +252,13 @@ class _AddSemTaskScreenState extends State<AddSemTaskScreen> {
 
            final addTask = SeoTaskModel(
       taskname: tasknameController.text,
-      snumber: semgettask.length+1,
+      snumber: smmgettask.length+1,
       insturctions: instructionController.text,
       iscompleted:0, date: selectedDate.toString(), 
       type: "Manual", businessId: Helper.businessId,
     );
-     await DatabaseHelper().insertSEMtaskdata(addTask);
-      Get.to(SemStrategyScreen(businessId: Helper.businessId,));
+     await DatabaseHelper().insertSMMtaskdata(addTask);
+      Get.to(SeoStrategyScreen(businessId: Helper.businessId,));
 
           },
           child: Container(

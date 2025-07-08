@@ -88,6 +88,68 @@ class DatabaseHelper {
         
       )
     ''');
+    await db.execute('''
+      CREATE TABLE smmtask (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        snumber INTEGER,
+        taskname TEXT,
+        insturctions TEXT,
+        iscompleted TEXT,
+        date TEXT,
+        category TEXT,
+        type TEXT,
+        businessid INTEGER
+        
+        
+      )
+    ''');
+    await db.execute('''
+      CREATE TABLE aeotask (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        snumber INTEGER,
+        taskname TEXT,
+        insturctions TEXT,
+        iscompleted TEXT,
+        date TEXT,
+        category TEXT,
+        type TEXT,
+        businessid INTEGER
+        
+        
+      )
+    ''');
+
+    await db.execute('''
+      CREATE TABLE geotask (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        snumber INTEGER,
+        taskname TEXT,
+        insturctions TEXT,
+        iscompleted TEXT,
+        date TEXT,
+        category TEXT,
+        type TEXT,
+        businessid INTEGER
+        
+        
+      )
+    ''');
+
+    await db.execute('''
+      CREATE TABLE aiotask (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        snumber INTEGER,
+        taskname TEXT,
+        insturctions TEXT,
+        iscompleted TEXT,
+        date TEXT,
+        category TEXT,
+        type TEXT,
+        businessid INTEGER
+        
+        
+      )
+    ''');
   }
 
   // CRUD Methods:
@@ -195,5 +257,153 @@ Future<int> insertSEMtaskdata(SeoTaskModel item) async {
   );
 }
 
+//smm
+
+Future<int> insertSMMtaskdata(SeoTaskModel item) async {
+    final db = await database;
+    return await db.insert('smmtask', item.toJson());
+  }
+
+
+ Future<List<Map<String, dynamic>>> getSMMdata() async {
+    final db = await database;
+    return await db.query('smmtask');
+  }
+
+  Future<int> updateSMMtask(SeoTaskModel item) async {
+    final db = await database;
+    return await db.update('smmtask', item.toJson(), where: 'id = ?', whereArgs: [item.id]);
+  }
+
+  Future<List<Map<String, dynamic>>> getSMMTaskByDate(String date) async {
+    final db = await database;
+    return await db.query(
+      'smmtask',
+      where: 'date = ?',
+      whereArgs: [date],
+    );
+  }
+
+  Future<List<Map<String, dynamic>>> getSMMTaskById(String id) async {
+  final db = await database;
+  return await db.query(
+    'smmtask',
+    where: 'businessid = ?',
+    whereArgs: [id],
+    orderBy: 'date ASC', // always ascending
+  );
+}
+
+//aeo
+
+Future<int> insertAEOtaskdata(SeoTaskModel item) async {
+    final db = await database;
+    return await db.insert('aeotask', item.toJson());
+  }
+
+
+ Future<List<Map<String, dynamic>>> getAEOdata() async {
+    final db = await database;
+    return await db.query('aeotask');
+  }
+
+  Future<int> updateAEOtask(SeoTaskModel item) async {
+    final db = await database;
+    return await db.update('aeotask', item.toJson(), where: 'id = ?', whereArgs: [item.id]);
+  }
+
+  Future<List<Map<String, dynamic>>> getAEOTaskByDate(String date) async {
+    final db = await database;
+    return await db.query(
+      'aeotask',
+      where: 'date = ?',
+      whereArgs: [date],
+    );
+  }
+
+  Future<List<Map<String, dynamic>>> getAEOTaskById(String id) async {
+  final db = await database;
+  return await db.query(
+    'aeotask',
+    where: 'businessid = ?',
+    whereArgs: [id],
+    orderBy: 'date ASC', // always ascending
+  );
+}
+
+
+//geo
+
+Future<int> insertGEOtaskdata(SeoTaskModel item) async {
+    final db = await database;
+    return await db.insert('geotask', item.toJson());
+  }
+
+
+ Future<List<Map<String, dynamic>>> getGEOdata() async {
+    final db = await database;
+    return await db.query('geotask');
+  }
+
+  Future<int> updateGEOtask(SeoTaskModel item) async {
+    final db = await database;
+    return await db.update('geotask', item.toJson(), where: 'id = ?', whereArgs: [item.id]);
+  }
+
+  Future<List<Map<String, dynamic>>> getGEOTaskByDate(String date) async {
+    final db = await database;
+    return await db.query(
+      'geotask',
+      where: 'date = ?',
+      whereArgs: [date],
+    );
+  }
+
+  Future<List<Map<String, dynamic>>> getGEOTaskById(String id) async {
+  final db = await database;
+  return await db.query(
+    'geotask',
+    where: 'businessid = ?',
+    whereArgs: [id],
+    orderBy: 'date ASC', // always ascending
+  );
+}
+
+//aeo
+
+Future<int> insertAIOtaskdata(SeoTaskModel item) async {
+    final db = await database;
+    return await db.insert('aiotask', item.toJson());
+  }
+
+
+ Future<List<Map<String, dynamic>>> getAIOdata() async {
+    final db = await database;
+    return await db.query('aiotask');
+  }
+
+  Future<int> updateAIOtask(SeoTaskModel item) async {
+    final db = await database;
+    return await db.update('aiotask', item.toJson(), where: 'id = ?', whereArgs: [item.id]);
+  }
+
+  Future<List<Map<String, dynamic>>> getAIOTaskByDate(String date) async {
+    final db = await database;
+    return await db.query(
+      'aiotask',
+      where: 'date = ?',
+      whereArgs: [date],
+    );
+  }
+
+  Future<List<Map<String, dynamic>>> getAIOTaskById(String id) async {
+  final db = await database;
+  return await db.query(
+    'aiotask',
+    where: 'businessid = ?',
+    whereArgs: [id],
+    orderBy: 'date ASC', // always ascending
+  );
+}
 
 }

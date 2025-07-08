@@ -15,6 +15,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<Map<String, dynamic>> sData = [];
   List<Map<String, dynamic>> semData = [];
+  List<Map<String, dynamic>> smmData = [];
+  List<Map<String, dynamic>> aeoData = [];
+  List<Map<String, dynamic>> geoData = [];
+  List<Map<String, dynamic>> aioData = [];
   DateTime selectedDate = DateTime.now();
 
   void getbyDate() async {
@@ -41,13 +45,67 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {});
   }
 
+  void getsmmbyDate() async {
+    final rawData = await DatabaseHelper().getSMMTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    smmData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+  void getaeobyDate() async {
+    final rawData = await DatabaseHelper().getAEOTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    aeoData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+  void getgeobyDate() async {
+    final rawData = await DatabaseHelper().getGEOTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    geoData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+
+    void getaiobyDate() async {
+    final rawData = await DatabaseHelper().getAIOTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    aioData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+
   bool loading = false;
   @override
   void initState() {
     super.initState();
     getbyDate();
     getsembyDate();
-  }
+    getsmmbyDate();
+    getaeobyDate();
+    getgeobyDate();
+    getaiobyDate();
+      }
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +113,14 @@ class _HomeScreenState extends State<HomeScreen> {
         sData.where((task) => task["iscompleted"].toString() == '1').toList();
         final completedsemTasks =
         semData.where((task) => task["iscompleted"].toString() == '1').toList();
+        final completedsmmTasks =
+        smmData.where((task) => task["iscompleted"].toString() == '1').toList();
+        final completedaeoTasks =
+        aeoData.where((task) => task["iscompleted"].toString() == '1').toList();
+        final completedgeoTasks =
+        geoData.where((task) => task["iscompleted"].toString() == '1').toList();
+        final completedaioTasks =
+        aioData.where((task) => task["iscompleted"].toString() == '1').toList();
 
     return Scaffold(
       appBar: AppBar(
@@ -145,173 +211,110 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             const SizedBox(height: 20),
+       // SEO
+                      if (completedTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/sem.png",
+                                taskName: completedTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
 
-            /// ✅ Completed Tasks Section
-            completedTasks.isNotEmpty 
-                ? ListView.builder(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: completedTasks.length,
-                  itemBuilder: (context, index) {
-                    final task = completedTasks[index];
-                    return Padding(
-                      padding: const EdgeInsets.only(
-                        left: 5,
-                        right: 5,
-                        top: 10,
-                      ),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              CircleAvatar(
-                                radius: 12,
-                                backgroundColor: AppColors.blue,
-                                child: Icon(
-                                  Icons.check,
-                                  size: 18,
-                                  color: AppColors.textWhite,
-                                ),
+                      // SEM
+                      if (completedsemTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedsemTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/sem.png",
+                                taskName: completedsemTasks[index]["taskname"],
                               ),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "assets/icons/anlysis.png",
-                                    width: 30,
-                                    height: 30,
-                                    fit: BoxFit.fitHeight,
-                                  ),
-                                  const SizedBox(width: 5),
-                                  Container(
-                                    width: 150,
-                                    child: Text(
-                                      task["taskname"],
-                                      style: const TextStyle(fontSize: 14),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 2),
-                                    child: Container(
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: 6,
-                                        vertical: 2,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: Colors.yellow[700],
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      child: const Text(
-                                        "20XP",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                            );
+                          },
+                        ),
+
+                      // SMM
+                      if (completedsmmTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedsmmTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/images/social.png",
+                                taskName: completedsmmTasks[index]["taskname"],
                               ),
-                              CircleAvatar(
-                                radius: 15,
-                                backgroundColor: const Color(0xFFE6F1FF),
-                                child: Icon(
-                                  Icons.play_arrow_sharp,
-                                  size: 20,
-                                  color: AppColors.blue,
-                                ),
+                            );
+                          },
+                        ),
+
+                      // AEO
+                      if (completedaeoTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedaeoTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/aeo.png",
+                                taskName: completedaeoTasks[index]["taskname"],
                               ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                )
-                : const Text(""),
-                //SEM
-                  completedsemTasks.isNotEmpty 
-                ? ListView.builder(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: completedsemTasks.length,
-                  itemBuilder: (context, index) {
-                    final semtask = completedsemTasks[index];
-                    return Padding(
-                      padding: const EdgeInsets.only(
-                        left: 5,
-                        right: 5,
-                        top: 10,
-                      ),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              CircleAvatar(
-                                radius: 12,
-                                backgroundColor: AppColors.blue,
-                                child: Icon(
-                                  Icons.check,
-                                  size: 18,
-                                  color: AppColors.textWhite,
-                                ),
+                            );
+                          },
+                        ),
+                        // GEO
+                      if (completedgeoTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedgeoTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/geo.png",
+                                taskName: completedgeoTasks[index]["taskname"],
                               ),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "assets/icons/sem.png",
-                                    width: 40,
-                                    height: 40,
-                                    fit: BoxFit.fitHeight,
-                                  ),
-                                  const SizedBox(width: 5),
-                                  Container(
-                                    width: 150,
-                                    child: Text(
-                                      semtask["taskname"],
-                                      style: const TextStyle(fontSize: 14),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 2),
-                                    child: Container(
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: 6,
-                                        vertical: 2,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: Colors.yellow[700],
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      child: const Text(
-                                        "20XP",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                            );
+                          },
+                        ),
+                         // AIO
+                      if (completedaioTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedaioTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/aio.png",
+                                taskName: completedaioTasks[index]["taskname"],
                               ),
-                              CircleAvatar(
-                                radius: 15,
-                                backgroundColor: const Color(0xFFE6F1FF),
-                                child: Icon(
-                                  Icons.play_arrow_sharp,
-                                  size: 20,
-                                  color: AppColors.blue,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                )
-                : const Text(""),
+                            );
+                          },
+                        ),
+                
+
+                
+
+
             const SizedBox(height: 24),
             _buildDailyProgressCard(),
             const SizedBox(height: 24),
@@ -647,6 +650,92 @@ class _HomeScreenState extends State<HomeScreen> {
               }).toList(),
         ),
       ],
+    );
+  }
+}
+
+class TaskRow extends StatelessWidget {
+  final String iconPath;
+  final String taskName;
+
+  const TaskRow({Key? key, required this.iconPath, required this.taskName})
+    : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // Check Icon
+              CircleAvatar(
+                radius: 12,
+                backgroundColor: AppColors.blue,
+                child: Icon(Icons.check, size: 18, color: AppColors.textWhite),
+              ),
+
+              // Task Info
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0, right: 8),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        iconPath,
+                        width: 30,
+                        height: 30,
+                        fit: BoxFit.fitHeight,
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          taskName,
+                          style: const TextStyle(fontSize: 14),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 6,
+                          vertical: 2,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.yellow[700],
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Text(
+                          "20XP",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              // Play Icon
+              CircleAvatar(
+                radius: 15,
+                backgroundColor: const Color(0xFFE6F1FF),
+                child: Icon(
+                  Icons.play_arrow_sharp,
+                  size: 20,
+                  color: AppColors.blue,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

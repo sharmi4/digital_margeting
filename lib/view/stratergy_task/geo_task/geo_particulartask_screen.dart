@@ -8,12 +8,12 @@ import 'package:digital_marketing_stratergy/view/stratergy_task/task_order_scree
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SEMParticulartaskProgressScreen extends StatefulWidget {
+class GEOParticulartaskProgressScreen extends StatefulWidget {
   String instructions;
   String type;
   String category;
 
-  SEMParticulartaskProgressScreen({
+  GEOParticulartaskProgressScreen({
     super.key,
     required this.instructions,
     required this.category,
@@ -21,12 +21,12 @@ class SEMParticulartaskProgressScreen extends StatefulWidget {
   });
 
   @override
-  State<SEMParticulartaskProgressScreen> createState() =>
-      _SEMParticulartaskProgressScreenState();
+  State<GEOParticulartaskProgressScreen> createState() =>
+      _GEOParticulartaskProgressScreenState();
 }
 
-class _SEMParticulartaskProgressScreenState
-    extends State<SEMParticulartaskProgressScreen> {
+class _GEOParticulartaskProgressScreenState
+    extends State<GEOParticulartaskProgressScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +46,7 @@ class _SEMParticulartaskProgressScreenState
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              Helper.Semselectedstartergytitle,
+              Helper.geoselectedstartergytitle,
               style: primaryFont(
                 fontWeight: FontWeight.w500,
                 fontSize: 15,
@@ -118,7 +118,7 @@ class _SEMParticulartaskProgressScreenState
                           child: Column(
                             children: [
                               Text(
-                                Helper.selectedstartergytitle,
+                                Helper.geoselectedstartergytitle,
                                 style: primaryFont(
                                   fontWeight: FontWeight.w700,
                                   fontSize: 16,
@@ -136,7 +136,7 @@ class _SEMParticulartaskProgressScreenState
                         child: Row(
                           children: [
                             Text(
-                              "SEM",
+                              "GEO",
                               style: primaryFont(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 12,
@@ -295,14 +295,14 @@ class _SEMParticulartaskProgressScreenState
             ksizedbox20,
             InkWell(
               onTap: () {
-                print("TASK ID ==== > ${ Helper.semtaskId}");
-                DatabaseHelper().updateSEMtask(
+                print("TASK ID ==== > ${ Helper.geotaskId}");
+                DatabaseHelper().updateGEOtask(
                   SeoTaskModel(
-                    id: Helper.semtaskId,
-                    taskname: Helper.Semselectedstartergytitle,
+                    id: Helper.geotaskId,
+                    taskname: Helper.geoselectedstartergytitle,
                     insturctions: widget.instructions,
                     iscompleted: 1,
-                    snumber: Helper.semsnumber,
+                    snumber: Helper.geosnumber,
                     date: DateTime.now().toString().split(" ")[0],
                     type: widget.type,
                     businessId: Helper.businessId,

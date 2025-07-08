@@ -29,4 +29,32 @@ static int semsnumber = 0;
 static String semtype = "";
 
 
+static String SMMinstrusction = "";
+static String Smmselectedstartergytitle ="";
+static String smmtaskId ="";
+static int smmsnumber = 0;
+static String smmtype = "";
+
+
+static String AEOinstrusction = "";
+static String aeoselectedstartergytitle ="";
+static String aeotaskId ="";
+static int aeosnumber = 0;
+static String aeotype = "";
+
+
+static String GEOinstrusction = "";
+static String geoselectedstartergytitle ="";
+static String geotaskId ="";
+static int geosnumber = 0;
+static String geotype = "";
+
+
+static String AIOinstrusction = "";
+static String aioselectedstartergytitle ="";
+static String aiotaskId ="";
+static int aiosnumber = 0;
+static String aiotype = "";
+
+
 }

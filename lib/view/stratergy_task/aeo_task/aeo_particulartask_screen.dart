@@ -8,12 +8,12 @@ import 'package:digital_marketing_stratergy/view/stratergy_task/task_order_scree
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SEMParticulartaskProgressScreen extends StatefulWidget {
+class AEOParticulartaskProgressScreen extends StatefulWidget {
   String instructions;
   String type;
   String category;
 
-  SEMParticulartaskProgressScreen({
+  AEOParticulartaskProgressScreen({
     super.key,
     required this.instructions,
     required this.category,
@@ -21,12 +21,12 @@ class SEMParticulartaskProgressScreen extends StatefulWidget {
   });
 
   @override
-  State<SEMParticulartaskProgressScreen> createState() =>
-      _SEMParticulartaskProgressScreenState();
+  State<AEOParticulartaskProgressScreen> createState() =>
+      _AEOParticulartaskProgressScreenState();
 }
 
-class _SEMParticulartaskProgressScreenState
-    extends State<SEMParticulartaskProgressScreen> {
+class _AEOParticulartaskProgressScreenState
+    extends State<AEOParticulartaskProgressScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -118,7 +118,7 @@ class _SEMParticulartaskProgressScreenState
                           child: Column(
                             children: [
                               Text(
-                                Helper.selectedstartergytitle,
+                                Helper.aeoselectedstartergytitle,
                                 style: primaryFont(
                                   fontWeight: FontWeight.w700,
                                   fontSize: 16,
@@ -136,7 +136,7 @@ class _SEMParticulartaskProgressScreenState
                         child: Row(
                           children: [
                             Text(
-                              "SEM",
+                              "AEO",
                               style: primaryFont(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 12,
@@ -295,14 +295,14 @@ class _SEMParticulartaskProgressScreenState
             ksizedbox20,
             InkWell(
               onTap: () {
-                print("TASK ID ==== > ${ Helper.semtaskId}");
-                DatabaseHelper().updateSEMtask(
+                print("TASK ID ==== > ${ Helper.aeotaskId}");
+                DatabaseHelper().updateAEOtask(
                   SeoTaskModel(
-                    id: Helper.semtaskId,
-                    taskname: Helper.Semselectedstartergytitle,
+                    id: Helper.aeotaskId,
+                    taskname: Helper.aeoselectedstartergytitle,
                     insturctions: widget.instructions,
                     iscompleted: 1,
-                    snumber: Helper.semsnumber,
+                    snumber: Helper.aeosnumber,
                     date: DateTime.now().toString().split(" ")[0],
                     type: widget.type,
                     businessId: Helper.businessId,

@@ -2,14 +2,17 @@ import 'package:digital_marketing_stratergy/Helper.dart';
 import 'package:digital_marketing_stratergy/const/app_color.dart';
 import 'package:digital_marketing_stratergy/const/app_fonts.dart';
 import 'package:digital_marketing_stratergy/controller/statergy_controller.dart';
-import 'package:digital_marketing_stratergy/helper/loadingHelper.dart';
 import 'package:digital_marketing_stratergy/model/seo_statergy_model.dart';
 import 'package:digital_marketing_stratergy/sqlite_database/sqlite_database_helper.dart';
+import 'package:digital_marketing_stratergy/view/stratergy_task/aeo_task/aeo_stratergy_screen.dart';
 import 'package:digital_marketing_stratergy/view/stratergy_task/loading_helpers_coustom.dart';
 import 'package:digital_marketing_stratergy/view/stratergy_task/sem_task/sem_stratergy_screen.dart';
+import 'package:digital_marketing_stratergy/view/stratergy_task/smm_task/smm_stratergy_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'aio_task/aio_stratergy_screen.dart';
+import 'geo_task/geo_stratergy_screen.dart';
 import 'particular_stratergy_screen.dart';
 
 class StratergyTaskScreen extends StatefulWidget {
@@ -42,32 +45,32 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
     {
       "title": "Social Media Marketing (SMM)",
       "icon": "assets/images/social.png",
-      "completed": 4,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 800,
       "color": AppColors.blue,
     },
-     {
-      "title": "Answer Engine Optimization AEO ",
+    {
+      "title": "Answer Engine Optimization (AEO) ",
       "icon": "assets/icons/aeo.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.darkyellow,
     },
     {
       "title": "Generative Engine Optimization (GEO)",
       "icon": "assets/icons/geo.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.blue,
     },
     {
       "title": "AI Integration Optimization (AIO)",
       "icon": "assets/icons/aio.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.darkyellow,
     },
@@ -79,7 +82,7 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
       "xp": 300,
       "color": AppColors.blue,
     },
-   
+
     {
       "title": "Content Marketing",
       "icon": "assets/images/content_creation.png",
@@ -88,7 +91,7 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
       "xp": 500,
       "color": AppColors.darkyellow,
     },
-     {
+    {
       "title": "Email Marketing",
       "icon": "assets/images/email.png",
       "completed": 7,
@@ -128,7 +131,7 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
       "xp": 300,
       "color": AppColors.blue,
     },
-     {
+    {
       "title": "Online Reputation Management (ORM)",
       "icon": "assets/icons/orm.png",
       "completed": 7,
@@ -136,7 +139,7 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
       "xp": 300,
       "color": AppColors.darkyellow,
     },
-     {
+    {
       "title": "Conversion Rate Optimization (CRO)",
       "icon": "assets/icons/cro.png",
       "completed": 7,
@@ -144,7 +147,7 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
       "xp": 300,
       "color": AppColors.blue,
     },
-     {
+    {
       "title": "Web Analytics and Tracking",
       "icon": "assets/icons/wat.png",
       "completed": 7,
@@ -152,7 +155,7 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
       "xp": 300,
       "color": AppColors.darkyellow,
     },
-     {
+    {
       "title": "Pay-Per-Click Advertising (PPC)",
       "icon": "assets/icons/ppca.png",
       "completed": 7,
@@ -160,7 +163,7 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
       "xp": 300,
       "color": AppColors.blue,
     },
-     {
+    {
       "title": "Programmatic Advertising",
       "icon": "assets/icons/pa.png",
       "completed": 7,
@@ -168,7 +171,7 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
       "xp": 300,
       "color": AppColors.darkyellow,
     },
-     {
+    {
       "title": "Remarketing / Retargeting",
       "icon": "assets/icons/Retargeting.png",
       "completed": 7,
@@ -182,7 +185,7 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
       "completed": 7,
       "total": 10,
       "xp": 300,
-      "color":AppColors.darkyellow,
+      "color": AppColors.darkyellow,
     },
     {
       "title": "Voice Search Optimization",
@@ -267,6 +270,11 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
   ];
 
   List<Map<String, dynamic>> seogettask = [];
+  List<Map<String, dynamic>> semgettask = [];
+  List<Map<String, dynamic>> smmgettask = [];
+  List<Map<String, dynamic>> aeogettask = [];
+  List<Map<String, dynamic>> geogettask = [];
+  List<Map<String, dynamic>> aiogettask = [];
 
   @override
   void initState() {
@@ -275,6 +283,10 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
     statergydbinsert();
     gettaskdb();
     getSEMtaskdb();
+    getSMMtaskdb();
+    getAEOtaskdb();
+    getGEOtaskdb();
+    getAIOtaskdb();
   }
 
   void statergydbinsert() async {
@@ -289,24 +301,70 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
       );
     }
   }
-  
 
   void gettaskdb() async {
     seogettask = await DatabaseHelper().getSeoTaskById(Helper.businessId);
-    int completed = seogettask.where((task) => task["iscompleted"] == "1").length;
+    int completed =
+        seogettask.where((task) => task["iscompleted"] == "1").length;
     int total = seogettask.length;
     taskData[0]["completed"] = completed;
     taskData[0]["total"] = total;
     print(">>>> SEO completed: $completed / $total");
     setState(() {});
   }
-   void getSEMtaskdb() async {
-    seogettask = await DatabaseHelper().getSeoTaskById(Helper.businessId);
-    int completed = seogettask.where((task) => task["iscompleted"] == "1").length;
-    int total = seogettask.length;
+
+  void getSEMtaskdb() async {
+    semgettask = await DatabaseHelper().getSEMTaskById(Helper.businessId);
+    int completed =
+        semgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = semgettask.length;
     taskData[1]["completed"] = completed;
     taskData[1]["total"] = total;
     print(">>>> SEM completed: $completed / $total");
+    setState(() {});
+  }
+
+  void getSMMtaskdb() async {
+    smmgettask = await DatabaseHelper().getSMMTaskById(Helper.businessId);
+    int completed =
+        smmgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = smmgettask.length;
+    taskData[2]["completed"] = completed;
+    taskData[2]["total"] = total;
+    print(">>>> SMM completed: $completed / $total");
+    setState(() {});
+  }
+
+  void getAEOtaskdb() async {
+    aeogettask = await DatabaseHelper().getAEOTaskById(Helper.businessId);
+    int completed =
+        aeogettask.where((task) => task["iscompleted"] == "1").length;
+    int total = aeogettask.length;
+    taskData[3]["completed"] = completed;
+    taskData[3]["total"] = total;
+    print(">>>> aeo completed: $completed / $total");
+    setState(() {});
+  }
+
+  void getGEOtaskdb() async {
+    geogettask = await DatabaseHelper().getGEOTaskById(Helper.businessId);
+    int completed =
+        geogettask.where((task) => task["iscompleted"] == "1").length;
+    int total = geogettask.length;
+    taskData[4]["completed"] = completed;
+    taskData[4]["total"] = total;
+    print(">>>> SMM completed: $completed / $total");
+    setState(() {});
+  }
+
+  void getAIOtaskdb() async {
+    aiogettask = await DatabaseHelper().getAIOTaskById(Helper.businessId);
+    int completed =
+        aiogettask.where((task) => task["iscompleted"] == "1").length;
+    int total = aiogettask.length;
+    taskData[4]["completed"] = completed;
+    taskData[4]["total"] = total;
+    print(">>>> AIO completed: $completed / $total");
     setState(() {});
   }
 
@@ -428,11 +486,45 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
                               SeoStrategyScreen(businessId: Helper.businessId),
                         );
                       });
-                    }if (index == 1) {
+                    }
+                    if (index == 1) {
                       WidgetsBinding.instance.addPostFrameCallback((_) {
                         Get.to(
                           () =>
                               SemStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+                    if (index == 2) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              SmmStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+                    if (index == 3) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              AeoStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+                    if (index == 4) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              GeoStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                    if (index == 5) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              AioStrategyScreen(businessId: Helper.businessId),
                         );
                       });
                     }
@@ -444,7 +536,8 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
                     completed: task["completed"],
                     total: task["total"],
                     xp: task["xp"],
-                    color: task["color"], index: index,
+                    color: task["color"],
+                    index: index,
                   ),
                 );
               },
@@ -489,19 +582,14 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                   InkWell(
-  onTap: () async {
-    
-  },
-  child: Image.asset(
-    iconPath,
-    height: 60,
-    fit: BoxFit.fitHeight,
-  ),
-),
-
-
-
+                    InkWell(
+                      onTap: () async {},
+                      child: Image.asset(
+                        iconPath,
+                        height: 60,
+                        fit: BoxFit.fitHeight,
+                      ),
+                    ),
 
                     const SizedBox(width: 8),
                     Expanded(
@@ -602,49 +690,139 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               InkWell(
-                onTap: ()async{
-                if(index==0){
-       print("Tapped SEO Strategy at: ${DateTime.now()}");
+                onTap: () async {
+                  if (index == 0) {
+                    print("Tapped SEO Strategy at: ${DateTime.now()}");
 
-    CoustomLoadingHelper.show();
+                    CoustomLoadingHelper.show();
 
-    try {
-      await seostatergyController.submitStrategy();
-    } catch (e) {
-      print("Error submitting strategy: $e");
-    } finally {
-      CoustomLoadingHelper.hide();
-    }
+                    try {
+                      await seostatergyController.submitStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
 
-    print("Navigating to SeoStrategyScreen at: ${DateTime.now()}");
-    Get.to(() => SeoStrategyScreen(businessId: Helper.businessId));
-    }
-    if(index==1){
-       print("Tapped SEm Strategy at: ${DateTime.now()}");
+                    print(
+                      "Navigating to SeoStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => SeoStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+                  if (index == 1) {
+                    print("Tapped SEm Strategy at: ${DateTime.now()}");
 
-    CoustomLoadingHelper.show();
+                    CoustomLoadingHelper.show();
 
-    try {
-      await seostatergyController.submitSEMStrategy();
-    } catch (e) {
-      print("Error submitting strategy: $e");
-    } finally {
-      CoustomLoadingHelper.hide();
-    }
+                    try {
+                      await seostatergyController.submitSEMStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
 
-    print("Navigating to SeoStrategyScreen at: ${DateTime.now()}");
-    Get.to(() => SemStrategyScreen(businessId: Helper.businessId));
-    }
-  
+                    print(
+                      "Navigating to SeoStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => SemStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                  if (index == 2) {
+                    print("Tapped Smm Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitSMMStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to SmmoStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => SmmStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+                   if (index == 3) {
+                    print("Tapped Smm Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitAEOStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to aeoStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => AeoStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                   if (index == 4) {
+                    print("Tapped geo Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitGEOStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to geoStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => GeoStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                   if (index == 5) {
+                    print("Tapped aio Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitAIOStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to geoStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => AioStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
                 },
-                child: Text("Generate Statregy",
-                style: primaryFont(
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.textWhite,
+                child: Text(
+                  "Generate Statregy",
+                  style: primaryFont(
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.textWhite,
+                  ),
                 ),
-                
-                ),
-              )
+              ),
             ],
           ),
 
