@@ -31,6 +31,29 @@ class _CalenderScreenState extends State<CalenderScreen> {
     aeogetbyDate();
     geogetbyDate();
     aiogetbyDate();
+    sxogetbyDate();
+    cmgetbyDate();
+    emgetbyDate();
+    imgetbyDate();
+    amgetbyDate();
+    vmgetbyDate();
+    mmgetbyDate();
+    ormgetbyDate();
+    crogetbyDate();
+    watgetbyDate();
+    ppcgetbyDate();
+    pagetbyDate();
+    rrgetbyDate();
+    lsgetbyDate();
+    vsogetbyDate();
+    magetbyDate();
+    chatmgetbyDate();
+    commumgetbyDate();
+    dpgetbyDate();
+    wvemgetbyDate();
+    swmgetbyDate();
+    lpogetbyDate();
+    fbaogetbyDate();
   }
 
   void _showModalSheet(BuildContext context) {
@@ -330,6 +353,29 @@ class _CalenderScreenState extends State<CalenderScreen> {
                           aeogetbyDate();
                           geogetbyDate();
                           aiogetbyDate();
+                          sxogetbyDate();
+                          cmgetbyDate();
+                          emgetbyDate();
+                          imgetbyDate();
+                          amgetbyDate();
+                          vmgetbyDate();
+                          mmgetbyDate();
+                          ormgetbyDate();
+                          crogetbyDate();
+                          watgetbyDate();
+                          ppcgetbyDate();
+                          pagetbyDate();
+                          rrgetbyDate();
+                          lsgetbyDate();
+                          vsogetbyDate();
+                          magetbyDate();
+                          chatmgetbyDate();
+                          commumgetbyDate();
+                          dpgetbyDate();
+                          wvemgetbyDate();
+                          swmgetbyDate();
+                          lpogetbyDate();
+                          fbaogetbyDate();
                         });
                       },
                       calendarStyle: const CalendarStyle(
@@ -568,6 +614,373 @@ class _CalenderScreenState extends State<CalenderScreen> {
                           },
                         ),
 
+                          if (sxoData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: sxoData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/sxo.png",
+                                taskName: sxoData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                          if (cmData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: cmData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/images/content_creation.png",
+                                taskName: cmData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                          if (emData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: emData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/images/email.png",
+                                taskName: emData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                        if (imData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: imData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/im.png",
+                                taskName: imData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                        if (amData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: amData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/am.png",
+                                taskName: amData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                           if (vmData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: vmData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/vm.png",
+                                taskName: vmData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                           if (mmData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: mmData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/mm.png",
+                                taskName: mmData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                             if (ormData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: ormData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/orm.png",
+                                taskName: ormData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                                     if (croData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: croData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/cro.png",
+                                taskName: croData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                         if (watData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: watData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/wat.png",
+                                taskName: watData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                         if (ppcData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: ppcData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/ppca.png",
+                                taskName: ppcData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                           if (paData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: paData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/pa.png",
+                                taskName: paData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                            if (rrData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: rrData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/Retargeting.png",
+                                taskName: rrData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                        if (lsData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: lsData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/localseo.png",
+                                taskName: lsData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                            if (vsoData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: vsoData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/vso.png",
+                                taskName: vsoData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                              if (maData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: maData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/ma.png",
+                                taskName: maData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                              if (chatmData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: chatmData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/ca.png",
+                                taskName: chatmData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                                  if (commumData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: commumData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/com.png",
+                                taskName: commumData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                                    if (dpData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: dpData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/dpr.png",
+                                taskName: dpData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                        if (wvemData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: wvemData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/wvem.png",
+                                taskName: wvemData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+                         
+                          if (swmData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: swmData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/swm.png",
+                                taskName: swmData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                            if (lpoData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: lpoData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/lpo.png",
+                                taskName: lpoData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+                               if (fbaoData.isNotEmpty)
+                        ListView.builder(
+                          itemCount: fbaoData.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/fbo.png",
+                                taskName: fbaoData[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+              
                       // buildTodayTasksSection(),
                     ],
                   ),
@@ -665,7 +1078,7 @@ class _CalenderScreenState extends State<CalenderScreen> {
     setState(() {}); // Update UI after data change
   }
 
-    List<Map<String, dynamic>> aioData = [];
+  List<Map<String, dynamic>> aioData = [];
 
   void aiogetbyDate() async {
     final rawData = await DatabaseHelper().getAIOTaskByDate(
@@ -678,6 +1091,379 @@ class _CalenderScreenState extends State<CalenderScreen> {
         rawData.where((element) => seen.add(element['taskname'])).toList();
 
     print("Filtered SDATA LENGTH --> ${aioData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+    List<Map<String, dynamic>> sxoData = [];
+
+  void sxogetbyDate() async {
+    final rawData = await DatabaseHelper().getSXOTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    sxoData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${sxoData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+  List<Map<String, dynamic>> cmData = [];
+
+  void cmgetbyDate() async {
+    final rawData = await DatabaseHelper().getCMTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    cmData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${cmData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+  List<Map<String, dynamic>> emData = [];
+
+  void emgetbyDate() async {
+    final rawData = await DatabaseHelper().getEMTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    emData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${emData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+    List<Map<String, dynamic>> imData = [];
+
+  void imgetbyDate() async {
+    final rawData = await DatabaseHelper().getIMTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    imData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${imData.length}");
+    setState(() {}); // Update UI after data change
+  }
+  
+
+  List<Map<String, dynamic>> amData = [];
+
+  void amgetbyDate() async {
+    final rawData = await DatabaseHelper().getAMTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    amData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${amData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+    List<Map<String, dynamic>> vmData = [];
+
+  void vmgetbyDate() async {
+    final rawData = await DatabaseHelper().getVMTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    vmData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${vmData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+
+      List<Map<String, dynamic>> mmData = [];
+
+  void mmgetbyDate() async {
+    final rawData = await DatabaseHelper().getMMTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    mmData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${vmData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+        List<Map<String, dynamic>> ormData = [];
+
+  void ormgetbyDate() async {
+    final rawData = await DatabaseHelper().getORMTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    ormData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${ormData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+  List<Map<String, dynamic>> croData = [];
+
+  void crogetbyDate() async {
+    final rawData = await DatabaseHelper().getCROTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    croData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${croData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+    List<Map<String, dynamic>> watData = [];
+
+  void watgetbyDate() async {
+    final rawData = await DatabaseHelper().getWATTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    watData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${watData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+      List<Map<String, dynamic>> ppcData = [];
+
+  void ppcgetbyDate() async {
+    final rawData = await DatabaseHelper().getPPCTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    ppcData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${ppcData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+       List<Map<String, dynamic>> paData = [];
+
+  void pagetbyDate() async {
+    final rawData = await DatabaseHelper().getPATaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    paData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${paData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+  List<Map<String, dynamic>> rrData = [];
+
+  void rrgetbyDate() async {
+    final rawData = await DatabaseHelper().getRRTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    rrData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${rrData.length}");
+    setState(() {}); // Update UI after data change
+  }
+  
+    List<Map<String, dynamic>> lsData = [];
+
+  void lsgetbyDate() async {
+    final rawData = await DatabaseHelper().getLSTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    lsData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${lsData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+    
+    List<Map<String, dynamic>> vsoData = [];
+
+  void vsogetbyDate() async {
+    final rawData = await DatabaseHelper().getVSOTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    vsoData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${vsoData.length}");
+    setState(() {}); // Update UI after data change
+  }
+  
+    List<Map<String, dynamic>> maData = [];
+
+  void magetbyDate() async {
+    final rawData = await DatabaseHelper().getMATaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    maData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${maData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+  
+    List<Map<String, dynamic>> chatmData = [];
+
+  void chatmgetbyDate() async {
+    final rawData = await DatabaseHelper().getCHATMTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    chatmData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${chatmData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+      List<Map<String, dynamic>> commumData = [];
+
+  void commumgetbyDate() async {
+    final rawData = await DatabaseHelper().getCOMMUMTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    commumData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${commumData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+
+        List<Map<String, dynamic>> dpData = [];
+
+  void dpgetbyDate() async {
+    final rawData = await DatabaseHelper().getDPTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    dpData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${dpData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+          List<Map<String, dynamic>> wvemData = [];
+
+  void wvemgetbyDate() async {
+    final rawData = await DatabaseHelper().getWVEMTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    wvemData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${wvemData.length}");
+    setState(() {}); // Update UI after data change
+  }
+  
+            List<Map<String, dynamic>> swmData = [];
+
+  void swmgetbyDate() async {
+    final rawData = await DatabaseHelper().getSWMTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    swmData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${swmData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+              List<Map<String, dynamic>> lpoData = [];
+
+  void lpogetbyDate() async {
+    final rawData = await DatabaseHelper().getLPOTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    lpoData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${lpoData.length}");
+    setState(() {}); // Update UI after data change
+  }
+
+                List<Map<String, dynamic>> fbaoData = [];
+
+  void fbaogetbyDate() async {
+    final rawData = await DatabaseHelper().getFBAOTaskByDate(
+      _selectedDay.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    fbaoData =
+        rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    print("Filtered SDATA LENGTH --> ${fbaoData.length}");
     setState(() {}); // Update UI after data change
   }
 

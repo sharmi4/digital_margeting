@@ -19,6 +19,30 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Map<String, dynamic>> aeoData = [];
   List<Map<String, dynamic>> geoData = [];
   List<Map<String, dynamic>> aioData = [];
+  List<Map<String, dynamic>> sxoData = [];
+  List<Map<String, dynamic>> cmData = [];
+  List<Map<String, dynamic>> emData = [];
+  List<Map<String, dynamic>> imData = [];
+  List<Map<String, dynamic>> amData = [];
+  List<Map<String, dynamic>> vmData = [];
+  List<Map<String, dynamic>> mmData = [];
+  List<Map<String, dynamic>> ormData = [];
+  List<Map<String, dynamic>> croData = [];
+  List<Map<String, dynamic>> watData = [];
+  List<Map<String, dynamic>> ppcData = [];
+  List<Map<String, dynamic>> paData = [];
+  List<Map<String, dynamic>> rrData = [];
+  List<Map<String, dynamic>> lsData = [];
+  List<Map<String, dynamic>> vsoData = [];
+  List<Map<String, dynamic>> maData = [];
+  List<Map<String, dynamic>> chatmData = [];
+  List<Map<String, dynamic>> commumData = [];
+  List<Map<String, dynamic>> dpData = [];
+    List<Map<String, dynamic>> wvemData = [];
+      List<Map<String, dynamic>> swmData = [];
+
+          List<Map<String, dynamic>> lpoData = [];
+             List<Map<String, dynamic>> fbaoData = [];
   DateTime selectedDate = DateTime.now();
 
   void getbyDate() async {
@@ -94,6 +118,282 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {});
   }
 
+      void getsxobyDate() async {
+    final rawData = await DatabaseHelper().getSXOTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    sxoData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+  void getcmbyDate() async {
+    final rawData = await DatabaseHelper().getCMTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    cmData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+    void getembyDate() async {
+    final rawData = await DatabaseHelper().getEMTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    emData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+    void getimbyDate() async {
+    final rawData = await DatabaseHelper().getIMTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    imData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+    void getambyDate() async {
+    final rawData = await DatabaseHelper().getAMTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    amData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+    void getvmbyDate() async {
+    final rawData = await DatabaseHelper().getVMTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    vmData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+      void getmmbyDate() async {
+    final rawData = await DatabaseHelper().getMMTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    mmData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+        void getormbyDate() async {
+    final rawData = await DatabaseHelper().getORMTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    ormData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+
+           void getcrobyDate() async {
+    final rawData = await DatabaseHelper().getCROTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    croData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+             void getwatbyDate() async {
+    final rawData = await DatabaseHelper().getWATTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    watData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+  void getppcbyDate() async {
+    final rawData = await DatabaseHelper().getPPCTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    ppcData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+    void getpabyDate() async {
+    final rawData = await DatabaseHelper().getPATaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    paData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+    void getrrbyDate() async {
+    final rawData = await DatabaseHelper().getRRTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    rrData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+    void getlsbyDate() async {
+    final rawData = await DatabaseHelper().getLSTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    lsData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+      void getvsobyDate() async {
+    final rawData = await DatabaseHelper().getVSOTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    vsoData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+        void getmabyDate() async {
+    final rawData = await DatabaseHelper().getMATaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    maData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+          void getchatmbyDate() async {
+    final rawData = await DatabaseHelper().getCHATMTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    chatmData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+            void getcommumbyDate() async {
+    final rawData = await DatabaseHelper().getCOMMUMTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    commumData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+              void getdpbyDate() async {
+    final rawData = await DatabaseHelper().getDPTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    dpData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+                void getwvembyDate() async {
+    final rawData = await DatabaseHelper().getWVEMTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    wvemData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+        
+                  void getswmbyDate() async {
+    final rawData = await DatabaseHelper().getSWMTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    swmData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+                    void getlpobyDate() async {
+    final rawData = await DatabaseHelper().getLPOTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    lpoData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
+
+                      void getfbaobyDate() async {
+    final rawData = await DatabaseHelper().getFBAOTaskByDate(
+      selectedDate.toString().split(" ")[0],
+    );
+
+    // Remove duplicates based on 'taskname'
+    final seen = <String>{};
+    fbaoData = rawData.where((element) => seen.add(element['taskname'])).toList();
+
+    setState(() {});
+  }
 
   bool loading = false;
   @override
@@ -105,6 +405,29 @@ class _HomeScreenState extends State<HomeScreen> {
     getaeobyDate();
     getgeobyDate();
     getaiobyDate();
+    getsxobyDate();
+    getcmbyDate();
+    getembyDate();
+    getimbyDate();
+    getambyDate();
+    getvmbyDate();
+    getmmbyDate();
+    getormbyDate();
+    getcrobyDate();
+    getwatbyDate();
+    getppcbyDate();
+    getpabyDate();
+    getrrbyDate();
+    getlsbyDate();
+    getvsobyDate();
+    getmabyDate();
+    getchatmbyDate();
+    getcommumbyDate();
+    getdpbyDate();
+    getwvembyDate();
+    getswmbyDate();
+    getlpobyDate();
+    getfbaobyDate();
       }
 
   @override
@@ -121,6 +444,54 @@ class _HomeScreenState extends State<HomeScreen> {
         geoData.where((task) => task["iscompleted"].toString() == '1').toList();
         final completedaioTasks =
         aioData.where((task) => task["iscompleted"].toString() == '1').toList();
+        final completedsxoTasks =
+        sxoData.where((task) => task["iscompleted"].toString() == '1').toList();
+        final completedcmTasks =
+        cmData.where((task) => task["iscompleted"].toString() == '1').toList();
+        final completedemTasks =
+        emData.where((task) => task["iscompleted"].toString() == '1').toList();
+        final completedimTasks =
+        imData.where((task) => task["iscompleted"].toString() == '1').toList();
+        final completedamTasks =
+        amData.where((task) => task["iscompleted"].toString() == '1').toList();
+        final completedvmTasks =
+        vmData.where((task) => task["iscompleted"].toString() == '1').toList();
+        final completedmmTasks =
+        mmData.where((task) => task["iscompleted"].toString() == '1').toList();
+         final completedormTasks =
+        ormData.where((task) => task["iscompleted"].toString() == '1').toList();
+         final completedcroTasks =
+        croData.where((task) => task["iscompleted"].toString() == '1').toList();
+         final completedwatTasks =
+        watData.where((task) => task["iscompleted"].toString() == '1').toList();
+         final completedppcTasks =
+        ppcData.where((task) => task["iscompleted"].toString() == '1').toList();
+         final completedpaTasks =
+        paData.where((task) => task["iscompleted"].toString() == '1').toList();
+        final completedrrTasks =
+        rrData.where((task) => task["iscompleted"].toString() == '1').toList();
+         final completedlsTasks =
+        lsData.where((task) => task["iscompleted"].toString() == '1').toList();
+         final completedvsoTasks =
+        vsoData.where((task) => task["iscompleted"].toString() == '1').toList();
+         final completedmaTasks =
+        maData.where((task) => task["iscompleted"].toString() == '1').toList();
+         final completedchatmTasks =
+        chatmData.where((task) => task["iscompleted"].toString() == '1').toList();
+         final completedcommumTasks =
+        commumData.where((task) => task["iscompleted"].toString() == '1').toList();
+         final completeddpTasks =
+        dpData.where((task) => task["iscompleted"].toString() == '1').toList();
+         final completedwvemTasks =
+        wvemData.where((task) => task["iscompleted"].toString() == '1').toList();
+         final completedswmTasks =
+        swmData.where((task) => task["iscompleted"].toString() == '1').toList();
+         final completedlpoTasks =
+        lpoData.where((task) => task["iscompleted"].toString() == '1').toList();
+         final completedfbaoTasks =
+        fbaoData.where((task) => task["iscompleted"].toString() == '1').toList();
+
+
 
     return Scaffold(
       appBar: AppBar(
@@ -221,7 +592,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             return Padding(
                               padding: const EdgeInsets.only(left: 10,right: 10),
                               child: TaskRow(
-                                iconPath: "assets/icons/sem.png",
+                                iconPath: "assets/icons/seo.png",
                                 taskName: completedTasks[index]["taskname"],
                               ),
                             );
@@ -310,7 +681,382 @@ class _HomeScreenState extends State<HomeScreen> {
                             );
                           },
                         ),
-                
+
+                            // SXO
+                      if (completedsxoTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedsxoTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/sxo.png",
+                                taskName: completedsxoTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                              // CM
+                      if (completedcmTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedcmTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/images/content_creation.png",
+                                taskName: completedcmTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                      // EM
+                      if (completedemTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedemTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/images/email.png",
+                                taskName: completedemTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+                        
+                        // IM
+                        if (completedimTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedimTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/im.png",
+                                taskName: completedimTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                            
+                        // AM
+                        if (completedamTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedamTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/im.png",
+                                taskName: completedamTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+                        
+                          // VM
+                        if (completedvmTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedvmTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/vm.png",
+                                taskName: completedvmTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                                // MM
+                        if (completedmmTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedmmTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/mm.png",
+                                taskName: completedmmTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                          if (completedormTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedormTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/orm.png",
+                                taskName: completedormTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                             if (completedcroTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedcroTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/cro.png",
+                                taskName: completedcroTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                             if (completedwatTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedwatTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/wat.png",
+                                taskName: completedwatTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                            if (completedppcTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedppcTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/ppca.png",
+                                taskName: completedppcTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                              if (completedpaTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedpaTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/pa.png",
+                                taskName: completedpaTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                        if (completedrrTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedrrTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/Retargeting.png",
+                                taskName: completedrrTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                          if (completedlsTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedlsTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/localseo.png",
+                                taskName: completedlsTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                          if (completedvsoTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedvsoTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/vso.png",
+                                taskName: completedvsoTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                                if (completedmaTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedmaTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/ma.png",
+                                taskName: completedmaTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                                       if (completedchatmTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedchatmTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/ca.png",
+                                taskName: completedchatmTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                                         if (completedcommumTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedcommumTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/com.png",
+                                taskName: completedcommumTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                                           if (completeddpTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completeddpTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/dpr.png",
+                                taskName: completeddpTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                                               if (completedwvemTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedwvemTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/wvem.png",
+                                taskName: completedwvemTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                                                 if (completedswmTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedswmTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/swm.png",
+                                taskName: completedswmTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                                                  if (completedlpoTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedlpoTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/lpo.png",
+                                taskName: completedlpoTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
+
+                                                  if (completedfbaoTasks.isNotEmpty)
+                        ListView.builder(
+                          itemCount: completedfbaoTasks.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10),
+                              child: TaskRow(
+                                iconPath: "assets/icons/fbo.png",
+                                taskName: completedfbaoTasks[index]["taskname"],
+                              ),
+                            );
+                          },
+                        ),
 
                 
 

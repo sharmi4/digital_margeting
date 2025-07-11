@@ -33,7 +33,7 @@ class _AioStrategyScreenState extends State<AioStrategyScreen> {
 
   gettaskdb() async {
     aiogettask = await DatabaseHelper().getAIOTaskById(Helper.businessId);
-    print(">>>>>>>>>>>>getaeoTask>>>>>>>${aiogettask.length}");
+    print(">>>>>>>>>>>>getaioTask>>>>>>>${aiogettask.length}");
     print(">>>>>>>>>>>>>>>>>>businessId${Helper.businessId}");
     setState(()  {
 

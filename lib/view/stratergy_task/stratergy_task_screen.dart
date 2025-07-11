@@ -10,10 +10,32 @@ import 'package:digital_marketing_stratergy/view/stratergy_task/sem_task/sem_str
 import 'package:digital_marketing_stratergy/view/stratergy_task/smm_task/smm_stratergy_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'aio_task/aio_stratergy_screen.dart';
+import 'am_task/am_statergy_screen.dart';
+import 'chatm_task/chatm_statergy_screen.dart';
+import 'cm_task/cm_statergy_screen.dart';
+import 'comm_m_task/comm_m_statergy_screen.dart';
+import 'cro_task/cro_statergy_screen.dart';
+import 'dp_task/dp_statergy_screen.dart';
+import 'em_task/em_statergy_screen.dart';
+import 'fbao_task/fbao_statergy_screen.dart';
 import 'geo_task/geo_stratergy_screen.dart';
+import 'im_task/im_statergy_screen.dart';
+import 'lpo_task/lpo_statergy_screen.dart';
+import 'ls_task/ls_statergy_screen.dart';
+import 'ma_task/ma_statergy_screen.dart';
+import 'mm_task/mm_statergy_screen.dart';
+import 'orm_task/orm_statergy_screen.dart';
+import 'pa_task/pa_statergy_screen.dart';
 import 'particular_stratergy_screen.dart';
+import 'ppc_task/ppc_statergy_screen.dart';
+import 'rr_task/rr_statergy_screen.dart';
+import 'swm_task/swm_statergy_screen.dart';
+import 'sxo_task.dart/sxo_stratergy_screen.dart';
+import 'vm/vm_statergy_screen.dart';
+import 'vso_task/vso_statergy_screen.dart';
+import 'wat_task/wat_statergy_screen.dart';
+import 'wvem_task/wvem_statergy_screen.dart';
 
 class StratergyTaskScreen extends StatefulWidget {
   const StratergyTaskScreen({super.key});
@@ -84,119 +106,119 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
     },
 
     {
-      "title": "Content Marketing",
+      "title": "Content Marketing (CM)",
       "icon": "assets/images/content_creation.png",
-      "completed": 2,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 500,
       "color": AppColors.darkyellow,
     },
     {
-      "title": "Email Marketing",
+      "title": "Email Marketing (EM)",
       "icon": "assets/images/email.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.blue,
     },
     {
-      "title": "Influencer Marketing",
+      "title": "Influencer Marketing (IM)" ,
       "icon": "assets/icons/im.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.darkyellow,
     },
     {
-      "title": "Affiliate Marketing",
+      "title": "Affiliate Marketing (AM)",
       "icon": "assets/icons/am.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.blue,
     },
     {
-      "title": "Video Marketing",
+      "title": "Video Marketing (VM)",
       "icon": "assets/icons/vm.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.darkyellow,
     },
     {
-      "title": "Mobile Marketing",
+      "title": "Mobile Marketing (MM)",
       "icon": "assets/icons/mm.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.blue,
     },
     {
       "title": "Online Reputation Management (ORM)",
       "icon": "assets/icons/orm.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.darkyellow,
     },
     {
       "title": "Conversion Rate Optimization (CRO)",
       "icon": "assets/icons/cro.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.blue,
     },
     {
-      "title": "Web Analytics and Tracking",
+      "title": "Web Analytics and Tracking (WAT)",
       "icon": "assets/icons/wat.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.darkyellow,
     },
     {
       "title": "Pay-Per-Click Advertising (PPC)",
       "icon": "assets/icons/ppca.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.blue,
     },
     {
-      "title": "Programmatic Advertising",
+      "title": "Programmatic Advertising (PA)",
       "icon": "assets/icons/pa.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.darkyellow,
     },
     {
-      "title": "Remarketing / Retargeting",
+      "title": "Remarketing / Retargeting (RR)",
       "icon": "assets/icons/Retargeting.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.blue,
     },
     {
-      "title": "Local SEO",
+      "title": "Local SEO (LS)",
       "icon": "assets/icons/localseo.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.darkyellow,
     },
     {
-      "title": "Voice Search Optimization",
+      "title": "Voice Search Optimization (VSO)",
       "icon": "assets/icons/vso.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 00,
       "xp": 300,
       "color": AppColors.blue,
     },
     {
-      "title": "Marketing Automation",
+      "title": "Marketing Automation (MA)",
       "icon": "assets/icons/ma.png",
       "completed": 7,
       "total": 10,
@@ -204,58 +226,58 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
       "color": AppColors.darkyellow,
     },
     {
-      "title": "Chatbot Marketing",
+      "title": "Chatbot Marketing (CM)",
       "icon": "assets/icons/ca.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.blue,
     },
     {
-      "title": "Community Management",
+      "title": "Community Management (CM)",
       "icon": "assets/icons/com.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.darkyellow,
     },
     {
-      "title": "Digital PR",
+      "title": "Digital PR (DP)",
       "icon": "assets/icons/dpr.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.blue,
     },
     {
-      "title": "Webinar and Virtual Event Marketing",
+      "title": "Webinar and Virtual Event Marketing (WVEN)",
       "icon": "assets/icons/wvem.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.darkyellow,
     },
     {
-      "title": "SMS & WhatsApp Marketing",
+      "title": "SMS & WhatsApp Marketing (SWM)",
       "icon": "assets/icons/swm.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.blue,
     },
     {
-      "title": "Landing Page Optimization",
+      "title": "Landing Page Optimization (LPO)",
       "icon": "assets/icons/lpo.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.darkyellow,
     },
     {
-      "title": "Funnel Building and Optimization",
+      "title": "Funnel Building and Optimization (FBAO)",
       "icon": "assets/icons/fbo.png",
-      "completed": 7,
-      "total": 10,
+      "completed": 0,
+      "total": 0,
       "xp": 300,
       "color": AppColors.blue,
     },
@@ -275,6 +297,29 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
   List<Map<String, dynamic>> aeogettask = [];
   List<Map<String, dynamic>> geogettask = [];
   List<Map<String, dynamic>> aiogettask = [];
+  List<Map<String, dynamic>> sxogettask = [];
+  List<Map<String, dynamic>> cmgettask = [];
+  List<Map<String, dynamic>> emgettask = [];
+  List<Map<String, dynamic>> imgettask = [];
+  List<Map<String, dynamic>> amgettask = [];
+  List<Map<String, dynamic>> vmgettask = [];
+  List<Map<String, dynamic>> mmgettask = [];
+  List<Map<String, dynamic>> ormgettask = [];
+  List<Map<String, dynamic>> crogettask = [];
+  List<Map<String, dynamic>> watgettask = [];
+  List<Map<String, dynamic>> ppcgettask = [];    
+  List<Map<String, dynamic>> pagettask = [];  
+  List<Map<String, dynamic>> rrgettask = [];  
+  List<Map<String, dynamic>> lsgettask = [];  
+  List<Map<String, dynamic>> vsogettask = [];
+  List<Map<String, dynamic>> magettask = [];
+  List<Map<String, dynamic>> chatmgettask = []; 
+  List<Map<String, dynamic>> commumgettask = []; 
+  List<Map<String, dynamic>> dpgettask = [];
+  List<Map<String, dynamic>> wvemgettask = [];
+  List<Map<String, dynamic>> swmgettask = []; 
+    List<Map<String, dynamic>> lpogettask = [];     
+    List<Map<String, dynamic>> fbaogettask = [];                                                                                                 
 
   @override
   void initState() {
@@ -287,6 +332,29 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
     getAEOtaskdb();
     getGEOtaskdb();
     getAIOtaskdb();
+    getSXOtaskdb();
+    getCMtaskdb();
+    getEMtaskdb();
+    getIMtaskdb();
+    getAMtaskdb();
+    getVMtaskdb();
+    getMMtaskdb();
+    getORMtaskdb();
+    getCROtaskdb();
+    getWATtaskdb();
+    getPPCtaskdb();
+    getPAtaskdb();
+    getRRtaskdb();
+    getLStaskdb();
+    getVSOtaskdb();
+    getMAtaskdb();
+    getCHATMtaskdb();
+    getCOMMUMtaskdb();
+    getDPtaskdb();
+    getWVEMtaskdb();
+    getSWMtaskdb();
+    getLPOtaskdb();
+    getFBAOtaskdb();
   }
 
   void statergydbinsert() async {
@@ -362,9 +430,262 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
     int completed =
         aiogettask.where((task) => task["iscompleted"] == "1").length;
     int total = aiogettask.length;
-    taskData[4]["completed"] = completed;
-    taskData[4]["total"] = total;
+    taskData[5]["completed"] = completed;
+    taskData[5]["total"] = total;
     print(">>>> AIO completed: $completed / $total");
+    setState(() {});
+  }
+
+  void getSXOtaskdb() async {
+    sxogettask = await DatabaseHelper().getSXOTaskById(Helper.businessId);
+    int completed =
+        sxogettask.where((task) => task["iscompleted"] == "1").length;
+    int total = sxogettask.length;
+    taskData[6]["completed"] = completed;
+    taskData[6]["total"] = total;
+    print(">>>> sxO completed: $completed / $total");
+    setState(() {});
+  }
+
+    void getCMtaskdb() async {
+    cmgettask = await DatabaseHelper().getCMTaskById(Helper.businessId);
+    int completed =
+        cmgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = cmgettask.length;
+    taskData[7]["completed"] = completed;
+    taskData[7]["total"] = total;
+    print(">>>> cm completed: $completed / $total");
+    setState(() {});
+  }
+
+  void getEMtaskdb() async {
+    emgettask = await DatabaseHelper().getEMTaskById(Helper.businessId);
+    int completed =
+        emgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = emgettask.length;
+    taskData[8]["completed"] = completed;
+    taskData[8]["total"] = total;
+    print(">>>> em completed: $completed / $total");
+    setState(() {});
+  }
+
+   void getIMtaskdb() async {
+    imgettask = await DatabaseHelper().getIMTaskById(Helper.businessId);
+    int completed =
+        imgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = imgettask.length;
+    taskData[9]["completed"] = completed;
+    taskData[9]["total"] = total;
+    print(">>>> im completed: $completed / $total");
+    setState(() {});
+  }
+
+  void getAMtaskdb() async {
+    amgettask = await DatabaseHelper().getAMTaskById(Helper.businessId);
+    int completed =
+        amgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = amgettask.length;
+    taskData[10]["completed"] = completed;
+    taskData[10]["total"] = total;
+    print(">>>> am completed: $completed / $total");
+    setState(() {});
+  }
+
+  void getVMtaskdb() async {
+    vmgettask = await DatabaseHelper().getVMTaskById(Helper.businessId);
+    int completed =
+        vmgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = vmgettask.length;
+    taskData[11]["completed"] = completed;
+    taskData[11]["total"] = total;
+    print(">>>> vm completed: $completed / $total");
+    setState(() {});
+  }
+
+  void getMMtaskdb() async {
+    mmgettask = await DatabaseHelper().getMMTaskById(Helper.businessId);
+    int completed =
+        mmgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = mmgettask.length;
+    taskData[12]["completed"] = completed;
+    taskData[12]["total"] = total;
+    print(">>>> mm completed: $completed / $total");
+    setState(() {});
+  }
+
+  void getORMtaskdb() async {
+    ormgettask = await DatabaseHelper().getORMTaskById(Helper.businessId);
+    int completed =
+        ormgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = ormgettask.length;
+    taskData[13]["completed"] = completed;
+    taskData[13]["total"] = total;
+    print(">>>> mm completed: $completed / $total");
+    setState(() {});
+  }
+
+    void getCROtaskdb() async {
+    crogettask = await DatabaseHelper().getCROTaskById(Helper.businessId);
+    int completed =
+        crogettask.where((task) => task["iscompleted"] == "1").length;
+    int total = crogettask.length;
+    taskData[14]["completed"] = completed;
+    taskData[14]["total"] = total;
+    print(">>>> cro completed: $completed / $total");
+    setState(() {});
+  }
+
+    void getWATtaskdb() async {
+    watgettask = await DatabaseHelper().getWATTaskById(Helper.businessId);
+    int completed =
+        watgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = watgettask.length;
+    taskData[15]["completed"] = completed;
+    taskData[15]["total"] = total;
+    print(">>>> wat completed: $completed / $total");
+    setState(() {});
+  }
+
+  void getPPCtaskdb() async {
+    ppcgettask = await DatabaseHelper().getPPCTaskById(Helper.businessId);
+    int completed =
+        ppcgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = ppcgettask.length;
+    taskData[16]["completed"] = completed;
+    taskData[16]["total"] = total;
+    print(">>>> wat completed: $completed / $total");
+    setState(() {});
+  }
+
+    void getPAtaskdb() async {
+    pagettask = await DatabaseHelper().getPATaskById(Helper.businessId);
+    int completed =
+        pagettask.where((task) => task["iscompleted"] == "1").length;
+    int total = pagettask.length;
+    taskData[17]["completed"] = completed;
+    taskData[17]["total"] = total;
+    print(">>>> pa completed: $completed / $total");
+    setState(() {});
+  }
+
+      void getRRtaskdb() async {
+    rrgettask = await DatabaseHelper().getRRTaskById(Helper.businessId);
+    int completed =
+        rrgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = rrgettask.length;
+    taskData[18]["completed"] = completed;
+    taskData[18]["total"] = total;
+    print(">>>> rr completed: $completed / $total");
+    setState(() {});
+  }
+
+        void getLStaskdb() async {
+    lsgettask = await DatabaseHelper().getLSTaskById(Helper.businessId);
+    int completed =
+        lsgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = lsgettask.length;
+    taskData[19]["completed"] = completed;
+    taskData[19]["total"] = total;
+    print(">>>> LS completed: $completed / $total");
+    setState(() {});
+  }
+
+          void getVSOtaskdb() async {
+    vsogettask = await DatabaseHelper().getVSOTaskById(Helper.businessId);
+    int completed =
+        vsogettask.where((task) => task["iscompleted"] == "1").length;
+    int total = vsogettask.length;
+    taskData[20]["completed"] = completed;
+    taskData[20]["total"] = total;
+    print(">>>> VSO completed: $completed / $total");
+    setState(() {});
+  }
+
+            void getMAtaskdb() async {
+    magettask = await DatabaseHelper().getMATaskById(Helper.businessId);
+    int completed =
+        magettask.where((task) => task["iscompleted"] == "1").length;
+    int total = magettask.length;
+    taskData[21]["completed"] = completed;
+    taskData[21]["total"] = total;
+    print(">>>> MA completed: $completed / $total");
+    setState(() {});
+  }
+
+              void getCHATMtaskdb() async {
+    chatmgettask = await DatabaseHelper().getCHATMTaskById(Helper.businessId);
+    int completed =
+        chatmgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = chatmgettask.length;
+    taskData[22]["completed"] = completed;
+    taskData[22]["total"] = total;
+    print(">>>> CHATM completed: $completed / $total");
+    setState(() {});
+  }
+
+                void getCOMMUMtaskdb() async {
+    commumgettask = await DatabaseHelper().getCOMMUMTaskById(Helper.businessId);
+    int completed =
+        commumgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = commumgettask.length;
+    taskData[23]["completed"] = completed;
+    taskData[23]["total"] = total;
+    print(">>>> COMMUNITYM completed: $completed / $total");
+    setState(() {});
+  }
+
+                  void getDPtaskdb() async {
+    dpgettask = await DatabaseHelper().getDPTaskById(Helper.businessId);
+    int completed =
+        dpgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = dpgettask.length;
+    taskData[24]["completed"] = completed;
+    taskData[24]["total"] = total;
+    print(">>>> DP completed: $completed / $total");
+    setState(() {});
+  }
+
+                    void getWVEMtaskdb() async {
+    wvemgettask = await DatabaseHelper().getWVEMTaskById(Helper.businessId);
+    int completed =
+        wvemgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = wvemgettask.length;
+    taskData[25]["completed"] = completed;
+    taskData[25]["total"] = total;
+    print(">>>> WVEM completed: $completed / $total");
+    setState(() {});
+  }
+                     
+                      void getSWMtaskdb() async {
+    swmgettask = await DatabaseHelper().getSWMTaskById(Helper.businessId);
+    int completed =
+        swmgettask.where((task) => task["iscompleted"] == "1").length;
+    int total = swmgettask.length;
+    taskData[26]["completed"] = completed;
+    taskData[26]["total"] = total;
+    print(">>>> SWM completed: $completed / $total");
+    setState(() {});
+  }
+
+                        void getLPOtaskdb() async {
+    lpogettask = await DatabaseHelper().getLPOTaskById(Helper.businessId);
+    int completed =
+        lpogettask.where((task) => task["iscompleted"] == "1").length;
+    int total = lpogettask.length;
+    taskData[27]["completed"] = completed;
+    taskData[27]["total"] = total;
+    print(">>>> LPO completed: $completed / $total");
+    setState(() {});
+  }
+
+                          void getFBAOtaskdb() async {
+    fbaogettask = await DatabaseHelper().getFBAOTaskById(Helper.businessId);
+    int completed =
+        fbaogettask.where((task) => task["iscompleted"] == "1").length;
+    int total = fbaogettask.length;
+    taskData[28]["completed"] = completed;
+    taskData[28]["total"] = total;
+    print(">>>> FBAO completed: $completed / $total");
     setState(() {});
   }
 
@@ -525,6 +846,210 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
                         Get.to(
                           () =>
                               AioStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                    if (index == 6) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              SxoStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                      if (index == 7) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              CMStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                     if (index == 8) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              EMStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+                       if (index == 9) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              IMStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                       if (index == 10) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              AMStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                      if (index == 11) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              VMStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                     if (index == 12) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              MMStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                     if (index == 13) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              ORMStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                    if (index == 14) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              CROStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                    if (index == 15) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              WATStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+                    if (index == 16) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              PPCStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                    if (index == 17) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              PAStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                      if (index == 18) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              RRStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                        if (index == 19) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              LSStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                    
+                        if (index == 20) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              VSOStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                        if (index == 21) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              MAStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                         if (index == 22) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              CHATMStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                            if (index == 23) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              CommunityMStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                              if (index == 24) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              DPStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+                                 if (index == 25) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              WVEMStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+                                 if (index == 26) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              SWMStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                                  if (index == 27) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              LPOStrategyScreen(businessId: Helper.businessId),
+                        );
+                      });
+                    }
+
+                                  if (index == 28) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Get.to(
+                          () =>
+                              FBAOStrategyScreen(businessId: Helper.businessId),
                         );
                       });
                     }
@@ -814,6 +1339,490 @@ class _StratergyTaskScreenState extends State<StratergyTaskScreen> {
                       () => AioStrategyScreen(businessId: Helper.businessId),
                     );
                   }
+
+                   if (index == 6) {
+                    print("Tapped sxo Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitSXOStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to sxoStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => SxoStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                   if (index == 7) {
+                    print("Tapped cm Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitCMStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to cmStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => CMStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                     if (index == 8) {
+                    print("Tapped em Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitEMStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to emStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => EMStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                      if (index == 9) {
+                    print("Tapped im Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitIMStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to emStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => IMStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                      if (index == 10) {
+                    print("Tapped am Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitAMStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to emStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => AMStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                      if (index == 11) {
+                    print("Tapped vm Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitVMStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to vmStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => VMStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                      if (index == 12) {
+                    print("Tapped mm Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitMMStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to mmStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => MMStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                      if (index == 13) {
+                    print("Tapped orm Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitORMStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to ormStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => ORMStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                      if (index == 14) {
+                    print("Tapped cro Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitCROStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to croStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => CROStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                      if (index == 15) {
+                    print("Tapped wat Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitWATStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to watStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => WATStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                      if (index == 16) {
+                    print("Tapped ppc Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitPPCStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to ppcStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => PPCStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                         if (index == 17) {
+                    print("Tapped pa Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitPAStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to paStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => PAStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                    if (index == 18) {
+                    print("Tapped rr Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitRRStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to rrStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => RRStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                    if (index == 19) {
+                    print("Tapped ls Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitLSStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to lsStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => LSStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                    if (index == 20) {
+                    print("Tapped so Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitVSOStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to vsoStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => VSOStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                      if (index == 21) {
+                    print("Tapped ma Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitMAStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to maStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => MAStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                      if (index == 22) {
+                    print("Tapped chatm Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitCHATBOTMStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to chatStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => CHATMStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                      if (index == 23) {
+                    print("Tapped commum Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitCOMMUNITYMStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to commuStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => CommunityMStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                      if (index == 24) {
+                    print("Tapped dp Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitDPStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to dpStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => DPStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                       if (index == 25) {
+                    print("Tapped wvem Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitWVEMStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to wvemStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => WVEMStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                       if (index == 26) {
+                    print("Tapped swm Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitSWMStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to swmStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => SWMStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+
+                       if (index == 27) {
+                    print("Tapped lpo Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitLPOStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to lpoStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => LPOStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+                  
+                       if (index == 28) {
+                    print("Tapped fbao Strategy at: ${DateTime.now()}");
+
+                    CoustomLoadingHelper.show();
+
+                    try {
+                      await seostatergyController.submitFBAOStrategy();
+                    } catch (e) {
+                      print("Error submitting strategy: $e");
+                    } finally {
+                      CoustomLoadingHelper.hide();
+                    }
+
+                    print(
+                      "Navigating to fbaoStrategyScreen at: ${DateTime.now()}",
+                    );
+                    Get.to(
+                      () => FBAOStrategyScreen(businessId: Helper.businessId),
+                    );
+                  }
+                  
                 },
                 child: Text(
                   "Generate Statregy",

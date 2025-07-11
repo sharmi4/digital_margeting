@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
+import 'smm_stratergy_screen.dart';
+
 
 class AddSmmTaskScreen extends StatefulWidget {
   const AddSmmTaskScreen({super.key});
@@ -258,7 +260,7 @@ class _AddSmmTaskScreenState extends State<AddSmmTaskScreen> {
       type: "Manual", businessId: Helper.businessId,
     );
      await DatabaseHelper().insertSMMtaskdata(addTask);
-      Get.to(SeoStrategyScreen(businessId: Helper.businessId,));
+      Get.to(SmmStrategyScreen(businessId: Helper.businessId,));
 
           },
           child: Container(

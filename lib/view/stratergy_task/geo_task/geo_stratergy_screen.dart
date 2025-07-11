@@ -265,7 +265,7 @@ class _GeoStrategyScreenState extends State<GeoStrategyScreen> {
                       Get.to(
                         GEOParticulartaskProgressScreen(
                           instructions: Helper.GEOinstrusction, 
-                          category: 'AEO', type: Helper.geotype,
+                          category: 'GEO', type: Helper.geotype,
                         ),
                       );
               },
